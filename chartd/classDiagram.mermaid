@@ -1,6 +1,6 @@
 classDiagram
 
-class Usuari {
+class Usuari{
     -int id
     -String username
     -String password
@@ -30,6 +30,6 @@ class Tap{
     -datetime end 
 }
 
-Usuari "" --> "0..N" Child
-Child "" --> "1..1" Treatment
-Child "" --> "0..N" Tap
+Usuari "" --> "0-N" Child
+Child "" --> "1-1" Treatment
+Child "" --> "0-N" Tap
