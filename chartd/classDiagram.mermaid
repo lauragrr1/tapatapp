@@ -1,7 +1,4 @@
 classDiagram
-Usuari "" --> "0..N" Child
-Child "" --> "1..1" Treatment
-Child "" --> "0..N" Tap
 
 class Usuari {
     -int id
@@ -32,3 +29,7 @@ class Tap{
     -datetime init 
     -datetime end 
 }
+
+Usuari "" --> "0..N" Child
+Child "" --> "1..1" Treatment
+Child "" --> "0..N" Tap
