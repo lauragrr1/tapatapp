@@ -5,29 +5,13 @@ class User:
         self.username = username
         self.password = password
         self.email = email
-
-    def __str__(self):
-        return "Id: " + str(self.id) + "Username: " + self.username
     
-listUsers= [
-    User(1, "usuari1", "12345", "prova@gmail.com"),
-    User(2, "usuari2", "6789", "user@gmail.com"),
-    User(3, "usuari3", "0987", "admin@gmail.com"),
-]
-
-for u in listUsers:
-    print(u)
+    def __str__(self):
+        return "User:" + self.username + " pass:" + self.password + " email:" + self.email
 
 
-# Class Dao Users
-class DaoUsers:
-    def __init__(self):
-        self.users=listUsers
-
-    def getUserByUsername(self,username):
-        # Busca en la lista de usuarios
-        for u in self.users:
-            if u.username == username:
-                return u
-        return None  # Si no se encuentra, devuelve None
+users = [
+    User(id=1, username="usuari1", password="12345", email="usuari1@gmail.com"),
+    User(id=2, username="usuari2", password="123", email="usuari2@gmail.com")
+    ]
 
