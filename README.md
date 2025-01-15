@@ -1,3 +1,3 @@
 [Descripció del Projecte](descripcion.md)
 
-[Requeriments.md] (Requeriments.md))
+[Requeriments tècnics](Requeriments.md)
