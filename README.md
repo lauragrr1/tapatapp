@@ -2,4 +2,4 @@
 
 [Requeriments tècnics](Requeriments.md)
 
-[Prototip](tapatapp/Prototip Diagrama 1/server.py)
+[Prototip 1](<Prototip Diagrama 1>)
