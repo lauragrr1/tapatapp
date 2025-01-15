@@ -1,1 +1,1 @@
-[descripcion](descripcion.md)
+[Descripció del Projecte](descripcion.md)
