@@ -2,4 +2,4 @@
 
 [Requeriments tècnics](Requeriments.md)
 
-[Prototip 1](<Prototip Diagrama 1>)
+Prototip 1
