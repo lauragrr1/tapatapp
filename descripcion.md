@@ -17,7 +17,7 @@ L'objectiu de TapatApp és proporcionar a totes les famílies afectades per cata
 - Restar el temps que el nen passa adormit.
 - Implementar un sistema intel·ligent (intel·ligència artificial) amb notificacions per preveure quan el pegat està a punt de completar el seu temps.
 ## Requeriments Funcionals del Projecte
-Servidor per allotjar la part de backend.
-Desenvolupar el backend de l'aplicació amb serveis web.
-Desenvolupar el frontend de l'aplicació mòbil.
-Possibilitat de crear una web quan l'aplicació estigui en producció.
+- Servidor per allotjar la part de backend.
+- Desenvolupar el backend de l'aplicació amb serveis web.
+- Desenvolupar el frontend de l'aplicació mòbil.
+- Possibilitat de crear una web quan l'aplicació estigui en producció.
