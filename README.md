@@ -2,4 +2,4 @@
 
 [Requeriments tècnics](Requeriments.md)
 
-[Prototip 1](<Prototip Diagrama 1/Diagrama1.mermaid>)
+[Prototip](tapatapp/Prototip Diagrama 1/server.py)
