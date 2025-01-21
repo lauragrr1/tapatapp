@@ -40,7 +40,7 @@ app = Flask(__name__)
 
 @app.route('/tapatapp/getuser', methods=['GET'])
 def getUser():
-    return "Hello World"
+    return "Im Laura Grageda"
 
 if __name__ == '__main__':
      app.run(debug=True,host="0.0.0.0",port="10050")
