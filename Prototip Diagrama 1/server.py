@@ -13,8 +13,8 @@ class User:
 
 listUsers= [
     User(1,"usuari1", "12345", "user@gmail.com"),
-    User(2,"usuari2", "6789", "user2@proven.cat"),
-    User(3,"usuari3","0101","user3@proven.cat"),
+    User(2,"usuari2", "6789", "user2@gmail.com"),
+    User(3,"usuari3","0101","user3@gamail.com"),
     User(4,"usuari4","2222")
 ]
 
