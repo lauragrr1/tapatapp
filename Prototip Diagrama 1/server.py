@@ -12,10 +12,10 @@ class User:
         return "Id:" + str(self.id) + " Username:" + self.username
 
 listUsers= [
-    User(1,"usuari1", "12345", "prova@gmail.com"),
-    User(2,"user2", "123", "user2@proven.cat"),
-    User(3,"admin","12","admin@proven.cat"),
-    User(4,"admin2","12")
+    User(1,"usuari1", "12345", "user@gmail.com"),
+    User(2,"usuari2", "6789", "user2@proven.cat"),
+    User(3,"usuari3","0101","user3@proven.cat"),
+    User(4,"usuari4","2222")
 ]
 
 class DAOUsers:
