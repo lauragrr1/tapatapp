@@ -38,7 +38,7 @@ else:
 
 app = Flask(__name__)
 
-@app.route('/tapatapp/getuser', method=['GET'])
+@app.route('/tapatapp/getuser', methods=['GET'])
 def getUser():
     return "Hello World"
 
