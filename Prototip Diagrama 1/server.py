@@ -42,7 +42,7 @@ app = Flask(__name__)
 def getUser():
     n = str(request.args.get('username'))
     email = str(request.args.get('email'))
-    return "Hello, Im " + n + " with email: " + email
+    return "Hello, Im " + n + " with email: " + email 
 
 if __name__ == '__main__':
      app.run(debug=True,host="0.0.0.0",port="10050")
