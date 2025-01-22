@@ -6,7 +6,7 @@
 ## Prototip 1
 (imatge)
 
-## HTTP Request / Response
+## HTTP Request & Response
 
 - [Request](http.request.md)
 
