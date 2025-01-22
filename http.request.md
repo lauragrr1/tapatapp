@@ -30,8 +30,8 @@ POST request:
     }
 
 ### Com funciona un HTTP request en un entorn real?
-    1.El client (navegador o aplicació) inicia una sol·licitud HTTP enviant-la a un servidor.
-    2.El servidor processa la sol·licitud i respon amb un HTTP response, que pot incloure dades (com una pàgina HTML) o un estat de confirmació (com 200 OK o 404 Not Found).
+1. El client (navegador o aplicació) inicia una sol·licitud HTTP enviant-la a un servidor.
+2. El servidor processa la sol·licitud i respon amb un HTTP response, que pot incloure dades (com una pàgina HTML) o un estat de confirmació (com 200 OK o 404 Not Found).
 
 ## 1.2.clients HTTP
 curl (acrònim de Client URL) és una eina de línia de comandes utilitzada per transferir dades des d'un client fins a un servidor, o viceversa, a través de diferents protocols de xarxa, com ara HTTP, HTTPS, FTP, SFTP, SMTP, POP3, i molts més.
