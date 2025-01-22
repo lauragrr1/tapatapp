@@ -13,3 +13,15 @@
 - [Response](HTTP/http.response.md)
 
 
+## Definició dels EndPoints del WebService
+Definició dels EndPoints del Servei Web:
+
+Què necessitem per cada End-point
+
+- Descripció:
+- HOST: Domain port
+- End-point (URL):
+- Method:
+- Tipus de petició (headers)
+- Parametres que necessita la petició: (identifica els paràmetres i posa exemples en el cas de peticions GET)
+- Resposta:
