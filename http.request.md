@@ -13,9 +13,12 @@ Un HTTP request és una sol·licitud que un client (normalment un navegador web 
 
 ## 1.1 Exemples de HTTP request
 GET request:
+    
     GET /index.html HTTP/1.1
     Host: www.example.com
+
 POST request:
+    
     POST /api/login HTTP/1.1
     Host: www.example.com
     Content-Type: application/json
