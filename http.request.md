@@ -41,6 +41,7 @@ Instal·lar curl: https://scoop.sh/#/apps?q=curl
 IMPORTANT : heu d’utilitzar la ruta del curl que heu instal·lat amb scoop. A PowerShell, curl és un alias de Invoke-WebRequest i dona error 
 
 Executar una petició GET:
+
     PS C:\Users\kgr5971> C:\Users\kgr5971\scoop\apps\curl\current\bin\curl https://proven.cat
 
     PS> C:\Users\kgr5971\scoop\apps\curl\current\bin\curl  https://api.chucknorris.io/jokes/categories
@@ -48,6 +49,7 @@ Executar una petició GET:
     PS> C:\Users\kgr5971\scoop\apps\curl\current\bin\curl  https://api.chucknorris.io/jokes/random?category=dev
 
 Desar la resposta en un fitxer:
+
     PS C:\Users\kgr5971> C:\Users\kgr5971\scoop\apps\curl\current\bin\curl -o fitxer.html https://api.chucknorris.io/jokes/random?category=dev
 
 Executar petició POST:  
