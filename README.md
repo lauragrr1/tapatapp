@@ -1,9 +1,15 @@
+# Projecte Tapatapp 
 [Descripció del Projecte](descripcio.md)
 
 [Requeriments tècnics](Requeriments.md)
 
-[HTTP Request](http.request.md)
+## Prototip 1
+(imatge)
 
-[HTTP Response](http.response.md)
+## HTTP Request / Response
 
-Prototip 1 (imatge)
+[- Request](http.request.md)
+
+[- Response](http.response.md)
+
+
