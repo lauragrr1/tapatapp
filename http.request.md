@@ -42,6 +42,7 @@ IMPORTANT : heu d’utilitzar la ruta del curl que heu instal·lat amb scoop. A 
 
 Executar una petició GET:
 
+
     PS C:\Users\kgr5971> C:\Users\kgr5971\scoop\apps\curl\current\bin\curl https://proven.cat
 
     PS> C:\Users\kgr5971\scoop\apps\curl\current\bin\curl  https://api.chucknorris.io/jokes/categories
