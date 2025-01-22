@@ -6,4 +6,4 @@
 
 [HTTP Response](http.response.md)
 
-Prototip 1
+Prototip 1 (imatge)
