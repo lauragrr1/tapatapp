@@ -4,6 +4,6 @@
 
 [HTTP Request](http.request.md)
 
-[HTTP Response](htpp.response.md)
+[HTTP Response](http.response.md)
 
 Prototip 1
