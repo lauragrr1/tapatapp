@@ -20,7 +20,7 @@ Què necessitem per cada End-point
 
 - Descripció:
 - HOST: 192.168.144.63:10050
-- End-point (URL): http://192.168.144.63:10050/tapatapp/getuser 
+- End-point (URL): http://192.168.144.63:10050/prototip/getuser
 - Method: GET
 - Tipus de petició (headers)
 - Parametres que necessita la petició: (identifica els paràmetres i posa exemples en el cas de peticions GET)
