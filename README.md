@@ -1,7 +1,7 @@
 # Projecte Tapatapp 
-- [Descripció del Projecte](/tapatapp/Informació/descripcio.md)
+- [Descripció del Projecte](tapatapp/Informació/descripcio.md)
 
-- [Requeriments tècnics](/tapatapp/Informació/Requeriments.md)
+- [Requeriments tècnics](tapatapp/Informació/Requeriments.md)
 
 ## Prototip 1
 (imatge)
