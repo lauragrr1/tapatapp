@@ -2,4 +2,8 @@
 
 [Requeriments tècnics](Requeriments.md)
 
+HTTP Request
+
+HTTP Response
+
 Prototip 1
