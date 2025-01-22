@@ -77,6 +77,7 @@ Petició Http POST
     <input type="submit" value="Enviar">
 </form>
 
+
 es genera una petició POST
 
     POST /upload HTTP/1.1
