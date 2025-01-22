@@ -8,8 +8,8 @@
 
 ## HTTP Request & Response
 
-- [Request](http.request.md)
+- [Request](HTTP/http.request.md)
 
-- [Response](http.response.md)
+- [Response](HTTP/http.response.md)
 
 
