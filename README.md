@@ -31,4 +31,4 @@ Què necessitem per cada End-point
 
     Si l'usuari no existeix, retorna:
 
-        ```Usuari no trobat```
+```Usuari no trobat```
