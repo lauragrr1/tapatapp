@@ -18,10 +18,10 @@ Definició dels EndPoints del Servei Web:
 
 Què necessitem per cada End-point
 
-- <b>Descripció</b>: Servei que consulta si existeix un User per Username
+- <b>Descripció</b>: Servei que consulta si existeix un User per Username.
 - <b>HOST</b>: 192.168.144.63:10050
 - <b>End-point (URL)</b>: http://192.168.144.63:10050/prototip/getuser // http://192.168.144.63:10050/prototip/getuser?Username=exampleUser&email=example@example.com 
 - <b>Method</b>: GET
-- <b>Tipus de petició</b>: HTTP GET amb paràmetres inclosos a la URL (Username i email).
-- <b>Parametres que necessita la petició</b>: Username & email
-- <b>Resposta</b>: Si existeis retorna: "Hello, Im " + username + " with email: " + email, sino "Usuari no trobat".
+- <b>Tipus de petició</b>: HTTP GET amb paràmetres inclosos a la URL.
+- <b>Parametres que necessita la petició</b>: Username & email.
+- <b>Resposta</b>: Si existeis retorna: "Hello, Im " + <username> + " with email: " + email, sino "Usuari no trobat".
