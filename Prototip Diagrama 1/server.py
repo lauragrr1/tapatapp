@@ -34,7 +34,7 @@ u=daoUser.getUserByUsername("usuari1")
 if(u):
     print(u)
 else:
-    print("No trobat")
+    print("Usuari no trobat")
 
 app = Flask(__name__)
 
