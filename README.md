@@ -26,6 +26,9 @@ Què necessitem per cada End-point
 - <b>Parametres que necessita la petició</b>: Username & email.
 - <b>Exemple d'URL</b>: http://192.168.144.63:10050/tapatapp/getuser?username=laura&email=lala@gmail.com
 - <b>Resposta</b>: Si l'usuari existeix, el servei retorna: 
-        "Hello, Im " + username + " with email: " + email
+         
+    ```"Hello, Im " + username + " with email: " + email```
+
 Si l'usuari no existeix, retorna:
+
         Usuari no trobat
