@@ -33,4 +33,3 @@ Què necessitem per cada End-point
 
     ```Usuari no trobat```
 
-dfs
