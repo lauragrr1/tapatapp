@@ -29,5 +29,6 @@ Què necessitem per cada End-point
          
     ```"Hello, Im " + username + " with email: " + email```
 
-    Si l'usuari no existeix, retorna: 
+    Si l'usuari no existeix, retorna:    p
+
     ```Usuari no trobat```
