@@ -4,7 +4,7 @@
 - [Requeriments tècnics](Informació/Requeriments.md)
 
 ## Prototip 1
-(imatge)
+(<Prototip Diagrama 1/diagrama1.PNG>)
 
 ## HTTP Request & Response
 
