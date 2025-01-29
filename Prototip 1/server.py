@@ -38,12 +38,13 @@ else:
 
 app = Flask(__name__)
 
-@app.route('/tapatapp/getuser', methods=['GET'])
+@app.route('/Prototip1/getuser', methods=['GET'])
 def getUser():
     n = str(request.args.get('username'))
+    username = 'lauragrr1'
     email = 'lala@gmail.com'
     id = '235689'
-    return "Hello " + n + ", email: " + email + ", ID: " + id
+    return "Hello " + n + ", email: " + email + ", ID: " + id + " Username: " + username
 
 
 @app.route('/prototip/getuser/<string:username>',methods=['GET'])
