@@ -29,7 +29,27 @@ Què necessitem per cada End-point
          
     ```"Hello, Im " + username + " with email: " + email```
 
+Code 200 Ok: {
+    "satus": "success",
+    "message": "Usuario encontrado",
+    "data": {
+        "username": "laura",
+        "email": "lala@gmail.com"
+    } 
+}
+
     Si l'usuari no existeix, retorna:    
 
     ```Usuari no trobat```
 
+    Code 404: {
+        "satus": "error",
+        "message": "Usuario no encontrado"
+    }
+
+    Si falta un paràmetre, retorna:
+    
+    Code 400: {
+        "status": "error",
+        "message": "Falta el paramatro "username"
+    }
