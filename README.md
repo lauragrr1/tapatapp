@@ -29,14 +29,14 @@ Què necessitem per cada End-point
          
     ```"Hello, Im " + username + " with email: " + email```
 
-    Code 200 Ok: {
-        "satus": "success",
-        "message": "Usuario encontrado",
-        "data": {
-            "username": "laura",
-            "email": "lala@gmail.com"
-        } 
-    }
+        Code 200 Ok: {
+            "satus": "success",
+            "message": "Usuario encontrado",
+            "data": {
+                "username": "laura",
+                "email": "lala@gmail.com"
+            } 
+        }
 
 Si l'usuari no existeix, retorna:    
 
