@@ -42,7 +42,7 @@ app = Flask(__name__)
 
 @app.route('/Prototip1/getuser', methods=['GET'])
 def getUser():
-    n = str(request.args.get('username'))
+    n = str(request.args.get(username))
     username = 'lauragrr1'
     email = 'lala@gmail.com'
     id = '235689'
