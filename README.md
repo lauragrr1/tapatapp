@@ -40,16 +40,16 @@ Code 200 Ok: {
 
 Si l'usuari no existeix, retorna:    
 
-    ```Usuari no trobat```
+```Usuari no trobat```
 
-    Code 404: {
-        "satus": "error",
-        "message": "Usuario no encontrado"
-    }
+Code 404: {
+    "satus": "error",
+    "message": "Usuario no encontrado"
+}
 
-    Si falta un paràmetre, retorna:
+Si falta un paràmetre, retorna:
 
-    Code 400: {
-        "status": "error",
-        "message": "Falta el paramatro "username"
-    }
+Code 400: {
+    "status": "error",
+    "message": "Falta el paramatro "username"
+}
