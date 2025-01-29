@@ -23,7 +23,7 @@ Què necessitem per cada End-point
 - <b>End-point (URL)</b>: http://192.168.144.63:10050/tapatapp/getuser
 - <b>Method</b>: GET
 - <b>Tipus de petició</b>: HTTP GET amb paràmetres inclosos a la URL.
-- <b>Parametres que necessita la petició</b>: Username & email.
+- <b>Parametres que necessita la petició</b>: Username & email (String).
 - <b>Exemple d'URL</b>: http://192.168.144.63:10050/tapatapp/getuser?username=laura&email=lala@gmail.com
 - <b>Resposta</b>: Si l'usuari existeix, el servei retorna: 
          
