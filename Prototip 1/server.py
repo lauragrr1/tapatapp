@@ -40,6 +40,11 @@ else:
 
 app = Flask(__name__)
 
+@app.route('/tapatapp/getuser/<string:username>',methods=['GET'])
+def prototipGetUser(username):
+    return "Prototip 1, user: " + username
+
+
 @app.route('/Prototip1/getuser', methods=['GET'])
 def getUser():
     n = str(request.args.get('username'))
@@ -47,10 +52,6 @@ def getUser():
     email = 'lala@gmail.com'
     id = '235689'
     return "Hello " + n + ", email: " + email + ", ID: " + id + " Username: " + username
-
-@app.route('/tapatapp/getuser/<string:username>',methods=['GET'])
-def prototipGetUser(username):
-    return "Prototip 1, user: " + username
 
 
 if __name__ == '__main__':
