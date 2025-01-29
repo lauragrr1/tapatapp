@@ -50,7 +50,7 @@ def getUser():
 
 @app.route('/prototip/getuser/<string:username>', methods=['GET'])
 def prototipGetUser(username):
-    user = daousers.getUserByUsername(username)
+    user = daoUser.getUserByUsername(username)
     if user:
         return jsonify(user.to_dict())
     if username==None:
