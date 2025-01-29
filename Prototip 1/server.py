@@ -53,7 +53,7 @@ def getUser():
 @app.route('/prototip/getuser/<string:username>',methods=['GET'])
 def prototipGetUser(username):
     return "Prototip 1, user: " + username
-s
+
 
 if __name__ == '__main__':
      app.run(debug=True,host="0.0.0.0",port="10050")
