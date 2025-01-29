@@ -29,13 +29,14 @@ class DAOUsers:
         return None
 
 daoUser = DAOUsers()
+
 '''
 u=daoUser.getUserByUsername("usuari1")
 if(u):
     print(u)
 else:
     print("Usuari no trobat")
-    '''
+'''
 
 app = Flask(__name__)
 
@@ -46,16 +47,6 @@ def getUser():
     email = 'lala@gmail.com'
     id = '235689'
     return "Hello " + n + ", email: " + email + ", ID: " + id + " Username: " + username
-
-@app.route('/prototip/getuser/<string:username>', methods=['GET'])
-def prototipGetUser(username):
-    return jsonify(daoUser.getUserByUsername("Usuari1"))
-
-'''
-@app.route('/prototip/getuser/<string:username>',methods=['GET'])
-def prototipGetUser(username):
-    return "Prototip 1, user: " + username
-'''
 
 if __name__ == '__main__':
      app.run(debug=True,host="0.0.0.0",port="10050")
