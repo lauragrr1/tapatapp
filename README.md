@@ -38,6 +38,7 @@ Code 200 Ok: {
     } 
 }
 
+
     Si l'usuari no existeix, retorna:    
 
     ```Usuari no trobat```
@@ -48,7 +49,7 @@ Code 200 Ok: {
     }
 
     Si falta un paràmetre, retorna:
-    
+
     Code 400: {
         "status": "error",
         "message": "Falta el paramatro "username"
