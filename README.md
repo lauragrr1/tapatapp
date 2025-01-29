@@ -38,8 +38,7 @@ Code 200 Ok: {
     } 
 }
 
-
-    Si l'usuari no existeix, retorna:    
+Si l'usuari no existeix, retorna:    
 
     ```Usuari no trobat```
 
