@@ -25,18 +25,19 @@ Què necessitem per cada End-point
 - <b>Tipus de petició</b>: HTTP GET amb paràmetres inclosos a la URL.
 - <b>Parametres que necessita la petició</b>: Username & email (String).
 - <b>Exemple d'URL</b>: http://192.168.144.63:10050/tapatapp/getuser?username=laura&email=lala@gmail.com
-- <b>Resposta</b>: Si l'usuari existeix, el servei retorna: 
+- <b>Resposta</b>: 
+Si l'usuari existeix, el servei retorna: 
          
-    ```"Hello, Im " + username + " with email: " + email```
+```"Hello, Im " + username + " with email: " + email```
 
-        Code 200 Ok: {
-            "satus": "success",
-            "message": "Usuario encontrado",
-            "data": {
-                "username": "laura",
-                "email": "lala@gmail.com"
-            } 
-        }
+    Code 200 Ok: {
+        "satus": "success",
+        "message": "Usuario encontrado",
+        "data": {
+            "username": "laura",
+            "email": "lala@gmail.com"
+        } 
+    }
 
 Si l'usuari no existeix, retorna:    
 
