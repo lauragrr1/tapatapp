@@ -43,7 +43,7 @@ def getUser():
     n = str(request.args.get('username'))
     email = str(request.args.get('email'))
     id = 235689
-    return "Hello, Im " + n + " with email: " + email 
+    return "Hello, Im " + n + " with email: " + email + id
 
 
 @app.route('/prototip/getuser/<string:username>',methods=['GET'])
