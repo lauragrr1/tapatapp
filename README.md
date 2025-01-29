@@ -29,7 +29,7 @@ Què necessitem per cada End-point
 
 Si l'usuari existeix, el servei retorna: 
          
-```"Hello, Im " + username + " with email: " + email```
+```"Hello " + n + ", email: " + email + ", ID: " + id + " Username: " + username```
 
     Code 200 Ok: {
         "satus": "success",
