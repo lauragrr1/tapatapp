@@ -37,6 +37,7 @@ Si l'usuari existeix, el servei retorna:
         "data": {
             "username": "laura",
             "email": "lala@gmail.com"
+            "id": "235689"
         } 
     }
 
