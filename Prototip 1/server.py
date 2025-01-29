@@ -49,7 +49,7 @@ def getUser():
 
 @app.route('/prototip/getuser/<string:username>', methods=['GET'])
 def prototipGetUser(username):
-    return jsonify(daoUser.getUserByUsername("laura"))
+    return jsonify(daoUser.getUserByUsername("Usuari1"))
 
 '''
 @app.route('/prototip/getuser/<string:username>',methods=['GET'])
