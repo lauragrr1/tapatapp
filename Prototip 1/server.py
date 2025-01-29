@@ -48,8 +48,6 @@ def getUser():
     id = '235689'
     return "Hello " + n + ", email: " + email + ", ID: " + id + " Username: " + username
 
-
-
 @app.route('/prototip/getuser/<string:username>',methods=['GET'])
 def prototipGetUser(username):
     return "Prototip 1, user: " + username
