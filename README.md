@@ -34,9 +34,9 @@ Si l'usuari existeix, el servei retorna:
         "satus": "success",
         "message": "Usuario encontrado",
         "data": {
-            "Username": "laura",
-            "ID": "235689"
-            "Email": "lala@gmail.com"
+            "Username": "usuari1",
+            "ID": "1"
+            "Email": "user@gmail.com"
         } 
     }
 
