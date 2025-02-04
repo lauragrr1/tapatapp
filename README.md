@@ -42,7 +42,7 @@ Si l'usuari existeix, el servei retorna:
 
 Si l'usuari no existeix, retorna:    
 
-```Usuari no trobat```
+
 
     Code 404: {
         "satus": "error",
