@@ -8,8 +8,8 @@ class User:
         self.password=password
         self.email=email
 
-    def __str__(self):
-        return "Id:" + str(self.id) + " Username:" + self.username
+    # def __str__(self):
+    # return "Id:" + str(self.id) + " Username:" + self.username
 
 listUsers= [
     User(1,"usuari1", "12345", "user@gmail.com"),
@@ -45,7 +45,7 @@ def prototipGetUser(username):
     return "Prototip 1, user: " + username
 
 
-@app.route('/Prototip1/getuser', methods=['GET'])
+@app.route('/Prototip1/getuser/<username>', methods=['GET'])
 def getUser():
     n = str(request.args.get('username'))
     username = 'lauragrr1'
