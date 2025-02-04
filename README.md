@@ -22,8 +22,8 @@ Què necessitem per cada End-point
 - <b>HOST</b>: 192.168.144.63:10050
 - <b>End-point (URL)</b>: http://192.168.144.63:10050/Prototip1/getuser
 - <b>Method</b>: GET
-- <b>Tipus de petició</b>: HTTP GET amb paràmetres inclosos a la URL.
-- <b>Parametres que necessita la petició</b>: Username & email (String).
+- <b>Tipus de petició</b>: application/json
+- <b>Parametres que necessita la petició</b>: Username (String).
 - <b>Resposta</b>: 
 
 Si l'usuari existeix, el servei retorna: 
