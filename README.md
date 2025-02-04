@@ -32,7 +32,7 @@ Si l'usuari existeix, el servei retorna:
 
     Code 200 Ok: {
         "satus": "success",
-        "message": "Usuario encontrado",
+        "message": "User found",
         "data": {
             "Username": "usuari1",
             "ID": "1"
@@ -46,14 +46,14 @@ Si l'usuari no existeix, retorna:
 
     Code 404: {
         "satus": "error",
-        "message": "Usuario no encontrado"
+        "message": "User not found"
     }
 
 Si falta un paràmetre, retorna:
 
     Code 400: {
         "status": "error",
-        "message": "Falta el paramatro 'usuario'
+        "message": "'User' parameter is missing"
     }
 
 
