@@ -49,7 +49,7 @@ def getUser(username):
                 "ID:": user.id,
                 "Email": user.email
             } }), 200 # Código 200 OK
-    else
+    else:
         return jsonify({
             "status": "error",
             "message": "Usuario no encontrado"
