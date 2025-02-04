@@ -58,4 +58,3 @@ Si falta un paràmetre, retorna:
     }
 
 
-ghola
