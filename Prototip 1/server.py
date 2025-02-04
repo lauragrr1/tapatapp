@@ -35,6 +35,8 @@ daoUser = DAOUsers()
 
 @app.route('/Prototip1/getuser/<string:username>', methods=['GET'])
 def getUser(username):
+    if username is None or username.strip() == "":
+        return jsonify({"error": "Falta el parámetro de usuario"}), 400 # Código 400: Bad Request
     
     user = daoUser.getUserByUsername(username)
 
