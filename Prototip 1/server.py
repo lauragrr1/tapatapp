@@ -41,13 +41,14 @@ def getUser(username):
     user = daoUser.getUserByUsername(username)
 
     if user:
-        return jsonify ({
-            "ID:": user.id,
-            "Username": user.username,
-            "Email": user.email
-        }), 200 # Código 200 OK
+        return jsonify({
+            "data": {
+                "Username": user.username,
+                "ID:": user.id,
+                "Email": user.email
+            } }), 200 # Código 200 OK
     else
-        return jsonify ({"error": "Usuario no encontrado"}), 400 # Código 404: No encontrado
+        return jsonify({"error": "Usuario no encontrado"}), 400 # Código 404: No encontrado
     
 @app.route('/tapatapp/getuser/<string:username>',methods=['GET'])
 def get_Users ():
