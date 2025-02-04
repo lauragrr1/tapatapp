@@ -53,7 +53,7 @@ Si falta un paràmetre, retorna:
 
     Code 400: {
         "status": "error",
-        "message": "Falta el paramatro "username"
+        "message": "Falta el paramatro 'usuario'
     }
 
 
