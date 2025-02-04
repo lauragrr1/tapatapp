@@ -56,3 +56,6 @@ Si falta un paràmetre, retorna:
         "status": "error",
         "message": "Falta el paramatro "username"
     }
+
+
+ghola
