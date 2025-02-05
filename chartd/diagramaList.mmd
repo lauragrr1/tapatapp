@@ -1,0 +1,26 @@
+classDiagram
+    class View {
+        + requestUsername()
+        + showUserData(User user)
+        + showError(Error error)
+    }
+
+    class DAOUser {
+        + getUserByUsername(String username) : User / Error
+    }
+
+    class User {
+        +id: int
+        +username: String
+        +password: String
+        +email: String
+    }
+
+    class Error {
+        +errorCode: int
+        +errorJson: JSON
+    }
+    View --> DAOUser: requests user data
+    DAOUser --> View: returns user or error
+    DAOUser --> User: retrieves user data
+    DAOUser --> Error: retrieves error data if user = None
