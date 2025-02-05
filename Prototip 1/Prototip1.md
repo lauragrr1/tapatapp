@@ -55,5 +55,5 @@ Si falta el paràmetre, retorna:
 
 ## Diagrames 
 ![Fluxe](diagramaFluxe.PNG)
-
+------
 ![Class](diagramaClass.PNG)
