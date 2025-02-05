@@ -49,7 +49,7 @@ Si l'usuari no existeix, retorna:
         "message": "User not found"
     }
 
-Si falta un paràmetre, retorna:
+Si falta el paràmetre, retorna:
 
     Code 400: {
         "status": "error",
