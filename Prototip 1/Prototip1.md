@@ -1,6 +1,6 @@
 
 ## Prototip 1
-![Diagrama](<Prototip 1/diagramaPrototip1.png>)
+![Diagrama](diagramaPrototip1.png)
 
 ## HTTP Request & Response
 
