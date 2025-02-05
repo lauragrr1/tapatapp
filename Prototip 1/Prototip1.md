@@ -54,6 +54,6 @@ Si falta el paràmetre, retorna:
 
 
 ## Diagrames 
-![Fluxe](diagramaFluxe.PNG)
+[DAO](../chartd/diagramaDAO.mmd)
 ------
-![Class](diagramaClass.PNG)
+[Class](../chartd/diagramaList.mmd)
