@@ -1,0 +1,41 @@
+classDiagram
+    class Usuari {
+        +String username
+        +String email
+        +String password
+        +login()
+        +logout()
+    }
+
+    class Sessio {
+        +String token
+        +Date dataExpiracio
+        +crearSessio(Usuari usuari)
+        +tancarSessio()
+        +validarSessio()
+    }
+
+    class VistaLogin {
+        +mostrarFormulari()
+        +validarInputs()
+        +enviarCredencials()
+    }
+
+    class Dashboard {
+        +mostrarDadesUsuari()
+        +navegar()
+    }
+
+    class PerfilUsuari {
+        +String nom
+        +String cognoms
+        +int edat
+        +actualitzarPerfil()
+    }
+
+    Usuari --> Sessio : "Crea"
+    Sessio --> VistaLogin : "Autentica"
+    Usuari --> PerfilUsuari : "Té"
+    Sessio --> Dashboard : "Accedeix"
+    Dashboard --> PerfilUsuari : "Mostra dades"
+
