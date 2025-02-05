@@ -1,41 +1,19 @@
-classDiagram
-    class Usuari {
-        +String username
-        +String email
-        +String password
-        +login()
-        +logout()
-    }
+flowchart TD
+    A[Inici - Benvinguda] --> B[Login]
+    A --> C[Registre]
+    B -->|Credencials correctes| D[Dashboard]
+    B -->|Credencials incorrectes| E[Error de Login]
+    C --> B
+    D --> F[Pàgina de Cerca]
+    D --> G[Perfil d'Usuari]
+    F --> H[Detall de Tapa]
+    G --> B[Logout]
 
-    class Sessio {
-        +String token
-        +Date dataExpiracio
-        +crearSessio(Usuari usuari)
-        +tancarSessio()
-        +validarSessio()
-    }
+    %% Informació d'Entrada i Vista
+    classDef entrada fill
+    classDef vista fill
 
-    class VistaLogin {
-        +mostrarFormulari()
-        +validarInputs()
-        +enviarCredencials()
-    }
-
-    class Dashboard {
-        +mostrarDadesUsuari()
-        +navegar()
-    }
-
-    class PerfilUsuari {
-        +String nom
-        +String cognoms
-        +int edat
-        +actualitzarPerfil()
-    }
-
-    Usuari --> Sessio : "Crea"
-    Sessio --> VistaLogin : "Autentica"
-    Usuari --> PerfilUsuari : "Té"
-    Sessio --> Dashboard : "Accedeix"
-    Dashboard --> PerfilUsuari : "Mostra dades"
+    class A,C entrada
+    class B,E vista
+    class D,F,G vista
 
