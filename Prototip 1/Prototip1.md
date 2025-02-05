@@ -53,5 +53,5 @@ Si falta el paràmetre, retorna:
     }
 
 
-## Diagrames de Classes Prototip 1
-[diagrama](diagramaPrototip1.mmd)
+## Diagrames 
+
