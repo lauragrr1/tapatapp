@@ -20,7 +20,7 @@ Què necessitem per cada End-point
 
 - <b>Descripció</b>: Servei que consulta si existeix un User per Username.
 - <b>HOST</b>: 192.168.144.63:10050
-- <b>End-point (URL)</b>: http://192.168.144.63:10050/Prototip1/getuser
+- <b>End-point (URL)</b>: http://192.168.144.63:10050/Prototip1/getuser/username
 - <b>Method</b>: GET
 - <b>Tipus de petició</b>: application/json
 - <b>Parametres que necessita la petició</b>: Username (String).
