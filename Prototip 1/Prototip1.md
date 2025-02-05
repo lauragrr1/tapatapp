@@ -54,6 +54,6 @@ Si falta el paràmetre, retorna:
 
 
 ## Diagrames 
-[DAO](../chartd/diagramaDAO.mmd)
+![DAO](diagramaDAO.PNG)
 ------
-[Class](../chartd/diagramaList.mmd)
+![List](diagramaList.PNG)
