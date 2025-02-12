@@ -1,14 +1,9 @@
 flowchart TD
-    A[Home - Welcome Screen] --> B[Login]
-    B -->|Unregistered user| C[Registration Page]
-    B -->|Forgot password| D[Recover Password]
-    B --> E[Main screen]
-    E -->|If you have more than one dependent child| F[List of children]
-    F --> G[Child Menu]
-    E --> G
-    E --> H[User Settings]
-    E --> I[User Information]
-    C -->|Registered user| B
-    D -->|Password reset| B
-    G --> J[Child Details]
-    G --> K[Child Settings]
+    A["Home - Welcome Screen"] --> B["Login"] --> G
+    B -- Unregistered user --> C["Registration Page"]
+    B -- Forgot password --> D["Recover Password"]
+    B -->|If you have more than one dependent child| F[List of children]
+    F --> G["Child Menu"]
+    C -- Registered user --> B
+    D -- Password reset --> B
+    G --> J["Child Details"] & K["Child Settings"]
