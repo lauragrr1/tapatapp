@@ -1,14 +1,14 @@
 flowchart TD
-    A[Inici - Pantalla de benvinguda] --> B[Inici de sessió]
-    B -->|Usuari no registrat| C[Pàgina de registre]
-    B -->|Va oblidar la contrasenya| D[Recuperar contrasenya]
-    B --> E[Pantalla principal]
-    E -->|Si teniu més d'un nen a càrrec| F[Llistat de nens]
-    F --> G[Menú del nen]
+    A[Home - Welcome Screen] --> B[Login]
+    B -->|Unregistered user| C[Registration Page]
+    B -->|Forgot password| D[Recover Password]
+    B --> E[Main screen]
+    E -->|If you have more than one dependent child| F[List of children]
+    F --> G[Child Menu]
     E --> G
-    E --> H[Configuració de l'usuari]
-    E --> I[Informació de l'usuari]
-    C -->|Usuari registrat| B
-    D -->|Contrasenya restablida| B
-    G --> J[Detalls del nen]
-    G --> K[Configuració del nen]
+    E --> H[User Settings]
+    E --> I[User Information]
+    C -->|Registered user| B
+    D -->|Password reset| B
+    G --> J[Child Details]
+    G --> K[Child Settings]
