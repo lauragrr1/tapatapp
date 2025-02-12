@@ -15,4 +15,3 @@
   - <b>Configuracions generals:</b> Personalització de la interfície, incloent opcions com a mode fosc i mida de text.
   - <b>Tancar sessió:</b> L'usuari haurà de confirmar abans de tancar sessió a l'aplicació.
 
-![FlowChartTutor](flowchartTutor.png)
