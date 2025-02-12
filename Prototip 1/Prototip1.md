@@ -74,3 +74,5 @@ Si falta el paràmetre, retorna:
   - <b>Editar perfil:</b> Opción para modificar datos personales, agregar nueva información o actualizar secciones existentes.
   - <b>Configuraciones generales:</b> Personalización de la interfaz, incluyendo opciones como modo oscuro y tamaño de texto.
   - <b>Cerrar sesión:</b> El usuario deberá confirmar antes de cerrar sesión en la aplicación.
+
+![NouUsers](flowchartNouUser.png)
