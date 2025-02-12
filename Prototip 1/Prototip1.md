@@ -4,9 +4,9 @@
 
 ## HTTP Request & Response
 
-- [Request](Informació/http.request.md)
+- [Request](../Informació/http.request.md)
 
-- [Response](Informació/http.response.md)
+- [Response](../Informació/http.response.md)
 
 
 ## Definició dels EndPoints del WebService
