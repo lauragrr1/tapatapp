@@ -1,5 +1,5 @@
-
-## <b>Dades d'entrada de l'usuari</b>
+## Wireframes
+### Dades d'entrada de l'usuari
 
 <b>Inici</b>
 - <b>Contactar amb suport:</b> L'usuari pot enviar un missatge a l'equip d'assistència tècnica detallant-ne la consulta o el problema. Es presenta un formulari on heu d'ingressar el vostre correu electrònic i escriure el vostre missatge.
