@@ -59,20 +59,20 @@ Si falta el paràmetre, retorna:
 ![List](diagramaList.PNG)
 
 
-## <b>Datos de entrada del usuario</b>
+## <b>Dades d'entrada de l'usuari</b>
 
-<b>Inicio</b>
-- <b>Contactar con soporte:</b> El usuario puede enviar un mensaje al equipo de asistencia técnica detallando su consulta o problema. Se presenta un formulario donde debe ingresar su correo electrónico y escribir su mensaje.
-- <b>Registro:</b> El usuario debe registrarse con un correo electrónico válido y una contraseña que contenga al menos letras y números.
-- <b>Inicio de sesión:</b> El acceso a la cuenta se realiza mediante correo electrónico y contraseña.
-- <b>Recuperación de contraseña:</b> Si el usuario olvida su clave, puede solicitar su recuperación ingresando su correo electrónico registrado. Se enviará un enlace para restablecer la contraseña.
+<b>Inici</b>
+- <b>Contactar amb suport:</b> L'usuari pot enviar un missatge a l'equip d'assistència tècnica detallant-ne la consulta o el problema. Es presenta un formulari on heu d'ingressar el vostre correu electrònic i escriure el vostre missatge.
+- <b>Registre:</b> L'usuari s'ha de registrar amb un correu electrònic vàlid i una contrasenya que contingui almenys lletres i números.
+- <b>Inici de sessió:</b> L'accés al compte es fa mitjançant correu electrònic i contrasenya.
+- <b>Recuperació de contrasenya:</b> Si l'usuari oblida la clau, podeu sol·licitar la vostra recuperació introduint el vostre correu electrònic registrat. S'enviarà un enllaç per restablir la contrasenya.
 
 <b>Pantalla principal</b>
-- <b>Infantes a cargo:</b> Se muestra una lista de niños bajo el cuidado del usuario.
-- <b>Información del pegat:</b> Se proporciona información sobre el uso del pegat en los niños a cargo, incluyendo horas de colocación y retiro.
-- <b>Configuración:</b> Se permite al usuario realizar ajustes en su perfil y en la aplicación.
-  - <b>Editar perfil:</b> Opción para modificar datos personales, agregar nueva información o actualizar secciones existentes.
-  - <b>Configuraciones generales:</b> Personalización de la interfaz, incluyendo opciones como modo oscuro y tamaño de texto.
-  - <b>Cerrar sesión:</b> El usuario deberá confirmar antes de cerrar sesión en la aplicación.
+- <b>Infants a càrrec:</b> Es mostra una llista de nens sota la cura de l'usuari.
+- <b>Informació del pegat:</b> Es proporciona informació sobre l'ús del pegat als nens a càrrec, incloent hores de col·locació i retir.
+- <b>Configuració:</b> Es permet a l'usuari realitzar ajustaments al vostre perfil ia l'aplicació.
+  - <b>Editar perfil:</b> Opció per modificar dades personals, afegir nova informació o actualitzar seccions existents.
+  - <b>Configuracions generals:</b> Personalització de la interfície, incloent opcions com a mode fosc i mida de text.
+  - <b>Tancar sessió:</b> L'usuari haurà de confirmar abans de tancar sessió a l'aplicació.
 
 ![NouUsers](flowchartNouUser.png)
