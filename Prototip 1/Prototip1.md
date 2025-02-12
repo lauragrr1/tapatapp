@@ -59,7 +59,7 @@ Si falta el paràmetre, retorna:
 ![List](diagramaList.PNG)
 
 
-##<b>Datos de entrada del usuario</b>
+## <b>Datos de entrada del usuario</b>
 
 <b>Inicio</b>
 - <b>Contactar con soporte:</b> El usuario puede enviar un mensaje al equipo de asistencia técnica detallando su consulta o problema. Se presenta un formulario donde debe ingresar su correo electrónico y escribir su mensaje.
