@@ -1,18 +1,14 @@
 flowchart TD
-    Start[Inici] --> Welcome[Benvinguda]
-    Welcome --> Login[Login]
-    Welcome --> Register[Registre]
-    Login -->|Credencials vàlides| Home[Home]
-    Login -->|Credencials incorrectes| LoginError[Error de Login]
-    Register -->|Registre completat| Login
-
-    Home -->|Navegació per pestanyes| Tabs
-    Tabs --> Search[Pàgina de Cerca]
-    Tabs --> Favorites[Favorits]
-    Tabs --> UserProfile[Perfil]
-
-    Search --> TapaDetails[Detall de Tapa]
-    Favorites --> TapaDetails
-
-    UserProfile --> EditProfile[Editar Perfil]
-    UserProfile --> Logout[Tancar Sessió]
+    A[Inicio - Pantalla de bienvenida] --> B[Inicio de sesión]
+    B -->|Usuario no registrado| C[Página de registro]
+    B -->|Olvidó su contraseña| D[Recuperar contraseña]
+    B --> E[Pantalla principal]
+    E -->|Si tiene más de un niño a cargo| F[Listado de niños]
+    F --> G[Menú del niño]
+    E --> G
+    E --> H[Configuración del usuario]
+    E --> I[Información del usuario]
+    C -->|Usuario registrado| B
+    D -->|Contraseña restablecida| B
+    G --> J[Detalles del niño]
+    G --> K[Configuración del niño]
