@@ -1,4 +1,4 @@
-## Wireframes
+## WireFrames
 ### Dades d'entrada de l'usuari
 
 <b>Inici</b>
