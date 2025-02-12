@@ -71,6 +71,6 @@ Si falta el paràmetre, retorna:
 - <b>Infantes a cargo:</b> Se muestra una lista de niños bajo el cuidado del usuario.
 - <b>Información del pegat:</b> Se proporciona información sobre el uso del pegat en los niños a cargo, incluyendo horas de colocación y retiro.
 - <b>Configuración:</b> Se permite al usuario realizar ajustes en su perfil y en la aplicación.
-  - **Editar perfil:** Opción para modificar datos personales, agregar nueva información o actualizar secciones existentes.
-  - **Configuraciones generales:** Personalización de la interfaz, incluyendo opciones como modo oscuro y tamaño de texto.
-  - **Cerrar sesión:** El usuario deberá confirmar antes de cerrar sesión en la aplicación.
+  - <b>Editar perfil:</b> Opción para modificar datos personales, agregar nueva información o actualizar secciones existentes.
+  - <b>Configuraciones generales:</b> Personalización de la interfaz, incluyendo opciones como modo oscuro y tamaño de texto.
+  - <b>Cerrar sesión:</b> El usuario deberá confirmar antes de cerrar sesión en la aplicación.
