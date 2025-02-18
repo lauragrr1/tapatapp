@@ -2,17 +2,16 @@
 ### Dades d'entrada de l'usuari
 
 <b>Inici</b>
-- <b>Contactar amb suport:</b> L'usuari pot enviar un missatge a l'equip d'assistència tècnica detallant-ne la consulta o el problema. Es presenta un formulari on heu d'ingressar el vostre correu electrònic i escriure el vostre missatge.
+- <b>Benvinguda:</b> Es mostra la pantalla de benvinguda amb opcions per iniciar sessió o registrar-se.
 - <b>Registre:</b> L'usuari s'ha de registrar amb un correu electrònic vàlid i una contrasenya que contingui almenys lletres i números.
 - <b>Inici de sessió:</b> L'accés al compte es fa mitjançant correu electrònic i contrasenya.
 - <b>Recuperació de contrasenya:</b> Si l'usuari oblida la clau, podeu sol·licitar la vostra recuperació introduint el vostre correu electrònic registrat. S'enviarà un enllaç per restablir la contrasenya.
 
 <b>Pantalla principal</b>
-- <b>Infants a càrrec:</b> Es mostra una llista de nens sota la cura de l'usuari.
-- <b>Informació del pegat:</b> Es proporciona informació sobre l'ús del pegat als nens a càrrec, incloent hores de col·locació i retir.
-- <b>Configuració:</b> Es permet a l'usuari realitzar ajustaments al vostre perfil ia l'aplicació.
-  - <b>Editar perfil:</b> Opció per modificar dades personals, afegir nova informació o actualitzar seccions existents.
-  - <b>Configuracions generals:</b> Personalització de la interfície, incloent opcions com a mode fosc i mida de text.
-  - <b>Tancar sessió:</b> L'usuari haurà de confirmar abans de tancar sessió a l'aplicació.
+- <b>Infants a càrrec:</b> Si l'usuari té més d’un infant a càrrec, es mostrarà una llista amb els seus noms.
+- <b>Menú de l'infant:</b> En seleccionar un infant de la llista, es pot accedir a les seves dades i configuracions.
+  - <b>Detllas de l'infant:</b>  Es mostren les dades principals de l’infant seleccionat, incloent-hi el seu nom, edat i altres dades rellevants. 
+  - <b>Estat del pegat:</b> Es proporciona informació sobre l’ús del pegat, com ara el temps de col·locació, retir i estat actual.
+  - <b>Configuració de l'infant:</b> Opció per modificar les preferències i la informació relacionada amb l’infant.
 
 ![Pegat](FlowchartTutor.png) 
