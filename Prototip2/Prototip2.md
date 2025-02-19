@@ -29,4 +29,10 @@
     - Estat actual
 - <b>Configuració de l'Infant</b>: Opcions per modificar les preferències i informació associada.
 
+## Diagrama d'arquitectura del Prototip 2
+[Server Pro2](dadesPro2.py)
 ## Diagrama de classes
+
+![Diagrama Classes Front-End](diagramaclasses.png.png)
+
+[Diagrma de classes Backend](dadesPro2.mmd)
