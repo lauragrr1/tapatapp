@@ -1,3 +1,8 @@
+---
+config:
+  theme: default
+  layout: elk
+---
 classDiagram
     class User {
         +int id
@@ -6,7 +11,6 @@ classDiagram
         +string email
         +__str__() string
     }
-
     class Child {
         +int id
         +string child_name
@@ -14,7 +18,6 @@ classDiagram
         +int treatment_id
         +int time
     }
-
     class Tap {
         +int id
         +int child_id
@@ -23,25 +26,21 @@ classDiagram
         +string init
         +string end
     }
-
     class Status {
         +int id
         +string name
     }
-
     class Role {
         +int id
         +string type_rol
     }
-
     class Treatment {
         +int id
         +string name
     }
-
-    User "1" -- "*" Child : has
-    User "1" -- "*" Tap : registers
-    Child "1" -- "*" Tap : has
-    Tap "1" -- "1" Status : has
-    Child "1" -- "1" Treatment : follows
-    User "*" -- "*" Role : has
+    User -- Child : has
+    User -- Tap : registers
+    Child -- Tap : has
+    Tap -- Status : has
+    Child -- Treatment : follows
+    User -- Role : has
