@@ -20,14 +20,12 @@
 - En seleccionar un infant, es redirigeix al Menú de l’Infant.
 
 ### Menú de l’Infant
-- <b>Detalls de l’Infant</b>: 
-- Es mostren les dades principals:
+- <b>Detalls de l’Infant</b>: Es mostren les dades principals:
 	- Nom
 	- Edat
 	- Informació rellevant
 
-### Estat del Pegat
-- Es mostra informació com:
+- <b>Estat del Pegat</b>: Es mostra informació com:
 	- Temps de col·locació
 	- Temps de retirada
 	- Estat actual
