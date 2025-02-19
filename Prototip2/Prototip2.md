@@ -16,8 +16,7 @@
   	2. Rep un enllaç per restablir la contrasenya.
 
 ### Pantalla Principal
-- <b>Infants a Càrrec</b>: Si l'usuari té més d’un infant a càrrec, es mostrarà una llista amb els seus noms.
-- En seleccionar un infant, es redirigeix al Menú de l’Infant.
+- <b>Infants a Càrrec</b>: Si l'usuari té més d’un infant a càrrec, es mostrarà una llista amb els seus noms. En seleccionar un infant, es redirigeix al < Menú de l’Infant >.
 
 ### Menú de l’Infant
 - <b>Detalls de l’Infant</b>: Es mostren les dades principals:
