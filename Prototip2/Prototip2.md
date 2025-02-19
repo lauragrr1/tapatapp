@@ -4,7 +4,7 @@
 
 
 
-## Pantalla d’Inici i Autenticació
+### Pantalla d’Inici i Autenticació
 - <b>Benvinguda:</b> Es mostra una pantalla amb opcions per iniciar sessió o registrar-se.
 - <b>Registre d’Usuari</b>:
   	- Correu electrònic (validació requerida)
@@ -15,11 +15,11 @@
   	1. Introdueix el correu electrònic registrat.
   	2. Rep un enllaç per restablir la contrasenya.
 
-## Pantalla Principal
+### Pantalla Principal
 - <b>Infants a Càrrec</b>: Si l'usuari té més d’un infant a càrrec, es mostrarà una llista amb els seus noms.
 - En seleccionar un infant, es redirigeix al Menú de l’Infant.
 
-## Menú de l’Infant
+### Menú de l’Infant
 - <b>Detalls de l’Infant</b>: 
 - Es mostren les dades principals:
 	- Nom
