@@ -54,8 +54,8 @@ users = [
 children = [
     Child(id=1, child_name="Rocío Child", sleep_average=8, treatment_id=1, time=6),
     Child(id=2, child_name="Norman Child", sleep_average=10, treatment_id=2, time=6),
-    Child(id=3, child_name="Miguel Child", sleep_average=9, treatment_id=3, time=4),
-    Child(id=4, child_name="Nicole Child", sleep_average=10, treatment_id=4, time=4)
+    Child(id=3, child_name="Miguel Child", sleep_average=9, treatment_id=1, time=4),
+    Child(id=4, child_name="Nicole Child", sleep_average=10, treatment_id=1, time=4)
 ]
 
 taps = [
