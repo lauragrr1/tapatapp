@@ -12,7 +12,7 @@
 - <b>Inici de Sessió</b>:
 	- Accés amb correu electrònic i contrasenya.
 - <b>Recuperació de Contrasenya</b>: Si l’usuari oblida la seva clau:
-    1)Introdueix el correu electrònic registrat.
+    1) Introdueix el correu electrònic registrat.
   	2) Rep un enllaç per restablir la contrasenya.
 
 ### Pantalla Principal
