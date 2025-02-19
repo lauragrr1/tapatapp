@@ -46,22 +46,28 @@ class Treatment:
         self.id = id
         self.name = name
 
+# Users
 users = [
-    User(id=1, username="Mare", password="", email="mare@gmail.com"),
-    User(id=2, username="Pare", password="123", email="pare@gmail.com")
+    User(id=1, username="Mare", password="DFG123", email="mare@gmail.com"),
+    User(id=2, username="Pare", password="POP098", email="pare@gmail.com")
 ]
 
-# Crear les classes Child, Tap, Role, Status i Treatment
-
+# Child
 children = [
-    Child(id=1, child_name="Carol Child", sleep_average=8, treatment_id=1, time=6),
-    Child(id=2, child_name="Jaco Child", sleep_average=10, treatment_id=2, time=6)
+    Child(id=1, child_name="Rocío Child", sleep_average=8, treatment_id=1, time=6),
+    Child(id=2, child_name="Norman Child", sleep_average=10, treatment_id=2, time=6),
+    Child(id=3, child_name="Miguel Child", sleep_average=9, treatment_id=3, time=4),
+    Child(id=4, child_name="Nicole Child", sleep_average=10, treatment_id=4, time=4)
 ]
 
+# Taps
 taps = [
     Tap(id=1, child_id=1, status_id=1, user_id=1, init="2024-12-18T19:42:43", end="2024-12-18T20:42:43"),
-    Tap(id=2, child_id=2, status_id=2, user_id=2, init="2024-12-18T21:42:43", end="2024-12-18T22:42:43")
+    Tap(id=2, child_id=2, status_id=2, user_id=2, init="2024-12-18T21:42:43", end="2024-12-18T22:42:43"),
+    Tap(id=3, child_id=3, status_id=3, user_id=1, init="2024-12-18T21:42:43", end="2024-12-18T22:42:43"),
+    Tap(id=4, child_id=4, status_id=4, user_id=2, init="2024-12-18T21:42:43", end="2024-12-18T22:42:43")
 ]
+
 
 relation_user_child = [
     {"user_id": 1, "child_id": 1, "rol_id": 1},
@@ -70,6 +76,7 @@ relation_user_child = [
     {"user_id": 2, "child_id": 2, "rol_id": 2}
 ]
 
+# Roles
 roles = [
     Role(id=1, type_rol='Admin'),
     Role(id=2, type_rol='Tutor Mare Pare'),
@@ -77,6 +84,7 @@ roles = [
     Role(id=4, type_rol='Seguiment')
 ]
 
+# Status
 statuses = [
     Status(id=1, name="sleep"),
     Status(id=2, name="awake"),
@@ -84,6 +92,7 @@ statuses = [
     Status(id=4, name="no_eyepatch")
 ]
 
+#Status
 treatments = [
     Treatment(id=1, name='Hour'),
     Treatment(id=2, name='percentage')
