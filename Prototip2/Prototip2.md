@@ -2,8 +2,7 @@
 
 ![Pegat](FlowchartTutor.png) 
 
-
-
+## Descripció
 ### Pantalla d’Inici i Autenticació
 - <b>Benvinguda:</b> Es mostra una pantalla amb opcions per iniciar sessió o registrar-se.
 - <b>Registre d’Usuari</b>:
@@ -29,10 +28,10 @@
     - Estat actual
 - <b>Configuració de l'Infant</b>: Opcions per modificar les preferències i informació associada.
 
-## Diagrama d'arquitectura del Prototip 2
-[Server Pro2](dadesPro2.py)
-## Diagrama de classes
+## Diagrama d'arquitectura 
 
-![Diagrama de classes Pro 2](diagramaClassesPro2.png.png)
+## Diagrama de classes de Backend i Front-End
 
-[Diagrma de classes Backend](dadesPro2.mmd)
+![FrontEnd](diagramaClassesPro2.png.png)
+
+[BackEnd](dadesPro2.mmd)
