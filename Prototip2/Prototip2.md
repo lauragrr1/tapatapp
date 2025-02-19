@@ -23,7 +23,7 @@
     - Nom
     - Edat
     - Informació rellevant (Estat del pegat)
--<b> Estat del pegat</b>: Es mostra informació com:
+- <b>Estat del pegat</b>: Es mostra informació com:
     - Temps de col·locació
     - Temps de retirada
     - Estat actual
