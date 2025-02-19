@@ -18,15 +18,13 @@
 ### Pantalla Principal
 - <b>Infants a Càrrec</b>: Si l'usuari té més d’un infant a càrrec, es mostrarà una llista amb els seus noms. En seleccionar un infant, es redirigeix al < Menú de l’Infant >.
 
-### Menú de l’Infant
-- <b>Detalls de l’Infant</b>: Es mostren les dades principals:
-	  - Nom
-	  - Edat
-	  - Informació rellevant
-
-- <b>Estat del Pegat</b>: Es mostra informació com:
-	  - Temps de col·locació
-	  - Temps de retirada
-	  - Estat actual
-
-- <b>Configuració de l’Infant</b>: Opcions per modificar les preferències i informació associada.
+### Menú de l'Infant
+- <b>Detalls de l'Infant</b>: Esmostres les dades principals:
+    - Nom
+    - Edat
+    - Informació rellevant (Estat del pegat)
+-<b>Estat del pegat</b>: Es mostra informació com:
+    - Temps de col·locació
+    - Temps de retirada
+    - Estat actual
+- <b>Configuració de l'Infant</b>: Opcions per modificar les preferències i informació associada.
