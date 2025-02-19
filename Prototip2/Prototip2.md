@@ -35,3 +35,5 @@
 ![FrontEnd](diagramaClassesPro2.png.png)
 
 [BackEnd](dadesPro2.mmd)
+
+## Implementació
