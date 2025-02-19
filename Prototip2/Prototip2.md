@@ -28,3 +28,5 @@
     - Temps de retirada
     - Estat actual
 - <b>Configuració de l'Infant</b>: Opcions per modificar les preferències i informació associada.
+
+## Diagrama de classes
