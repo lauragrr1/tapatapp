@@ -33,6 +33,6 @@
 [Server Pro2](dadesPro2.py)
 ## Diagrama de classes
 
-
+![Diagrama de classes Pro 2](diagramaClassesPro2.png.png)
 
 [Diagrma de classes Backend](dadesPro2.mmd)
