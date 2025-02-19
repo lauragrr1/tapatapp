@@ -20,13 +20,13 @@
 
 ### Menú de l’Infant
 - <b>Detalls de l’Infant</b>: Es mostren les dades principals:
-	- Nom
-	- Edat
-	- Informació rellevant
+	  - Nom
+	  - Edat
+	  - Informació rellevant
 
 - <b>Estat del Pegat</b>: Es mostra informació com:
-	- Temps de col·locació
-	- Temps de retirada
-	- Estat actual
+	  - Temps de col·locació
+	  - Temps de retirada
+	  - Estat actual
 
-### Configuració de l’Infant: Opcions per modificar les preferències i informació associada.
+- <b>Configuració de l’Infant</b>: Opcions per modificar les preferències i informació associada.
