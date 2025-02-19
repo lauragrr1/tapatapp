@@ -1,0 +1,47 @@
+classDiagram
+    class User {
+        +int id
+        +string username
+        +string password
+        +string email
+        +__str__() string
+    }
+
+    class Child {
+        +int id
+        +string child_name
+        +int sleep_average
+        +int treatment_id
+        +int time
+    }
+
+    class Tap {
+        +int id
+        +int child_id
+        +int status_id
+        +int user_id
+        +string init
+        +string end
+    }
+
+    class Status {
+        +int id
+        +string name
+    }
+
+    class Role {
+        +int id
+        +string type_rol
+    }
+
+    class Treatment {
+        +int id
+        +string name
+    }
+
+    User "1" -- "*" Child : has
+    User "1" -- "*" Tap : registers
+    Child "1" -- "*" Tap : has
+    Tap "1" -- "1" Status : has
+    Child "1" -- "1" Treatment : follows
+    User "*" -- "*" Role : has
