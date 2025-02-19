@@ -71,8 +71,8 @@ taps = [
 
 relation_user_child = [
     {"user_id": 1, "child_id": 1, "rol_id": 1},
-    {"user_id": 1, "child_id": 1, "rol_id": 2},
-    {"user_id": 2, "child_id": 2, "rol_id": 1},
+    {"user_id": 1, "child_id": 2, "rol_id": 2},
+    {"user_id": 2, "child_id": 1, "rol_id": 1},
     {"user_id": 2, "child_id": 2, "rol_id": 2}
 ]
 
