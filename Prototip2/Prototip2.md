@@ -15,3 +15,4 @@
   - <b>Detllas de l'infant:</b>  Es mostren les dades principals de l’infant seleccionat, incloent-hi el seu nom, edat i altres dades rellevants. 
   - <b>Estat del pegat:</b> Es proporciona informació sobre l’ús del pegat, com ara el temps de col·locació, retir i estat actual.
   - <b>Configuració de l'infant:</b> Opció per modificar les preferències i la informació relacionada amb l’infant.
+  kk
