@@ -70,16 +70,16 @@ taps = [
 
 
 relation_user_child = [
-    {"user_id": 1, "child_id": 1, "rol_id": 1},
+    {"user_id": 1, "child_id": 1, "rol_id": 2},
     {"user_id": 1, "child_id": 2, "rol_id": 2},
-    {"user_id": 2, "child_id": 1, "rol_id": 1},
+    {"user_id": 2, "child_id": 1, "rol_id": 2},
     {"user_id": 2, "child_id": 2, "rol_id": 2}
 ]
 
 # Roles
 roles = [
     Role(id=1, type_rol='Admin'),
-    Role(id=2, type_rol='Tutor Mare Pare'),
+    Role(id=2, type_rol='Tutor/Mare/Pare'),
     Role(id=3, type_rol='Cuidador'),
     Role(id=4, type_rol='Seguiment')
 ]
