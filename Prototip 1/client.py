@@ -28,7 +28,7 @@ class ViewConsole:
 
     def showUserInfo(username):
         user_dao = UserDAO()
-        user = user_dao.get_user_by_username(username)
+        user = UserDAO.get_user_by_username(username)
         if user:
             print(f"User Info: {user}")
         else:
