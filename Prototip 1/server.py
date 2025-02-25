@@ -9,8 +9,8 @@ class User:
         self.password=password
         self.email=email
 
-    ''' def __str__(self): 
-    return "Id:" + str(self.id) + " Username:" + self.username '''
+    def __str__(self): 
+        print("Username:" + self.username +" Email:" + self.email)
 
 listUsers= [
     User(1,"usuari1", "12345", "user@gmail.com"),
