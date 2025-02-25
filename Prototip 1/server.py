@@ -29,8 +29,6 @@ class DAOUsers:
                 return u
         return None
 
-user_dao = UserDAO()
-
 app = Flask(__name__)
 daoUser = DAOUsers()
 
