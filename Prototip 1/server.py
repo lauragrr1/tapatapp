@@ -44,7 +44,7 @@ def get_users():
     return jsonify(daoUser.get_all_users())
 
 
-@app.route('/prototip1/getuser/', methods=['GET'])
+@app.route('/prototip1/getuser', methods=['GET'])
 def getUserByUsername():
     username=request.args.get('username', default="", type=str)
     print("+"+username+"+")
