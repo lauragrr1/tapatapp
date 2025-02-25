@@ -35,6 +35,5 @@ class ViewConsole:
 
 
 if __name__ == "__main__":
-    view = ViewConsole()
     username = ViewConsole.getInputUsername()
     ViewConsole.showUserInfo(username)
