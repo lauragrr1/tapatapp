@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 
+app = Flask(__name__)
 
 class User:
     def __init__(self, id, username, password, email=""):
