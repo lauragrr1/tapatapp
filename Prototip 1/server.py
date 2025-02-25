@@ -3,14 +3,14 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 class User:
-    def __init__(self, id, username, password, email=""):
+    def __init__(self, id, username, password, email):
         self.id=id
         self.username=username
         self.password=password
         self.email=email
 
     def __str__(self): 
-        print("Username:" + self.username +" Email:" + self.email)
+        print("Username:" + self.username + " Email:" + self.email)
 
 listUsers= [
     User(id=1, username="usuari1", password="12345", email="user@gmail.com"),
@@ -23,20 +23,29 @@ class DAOUsers:
     def __init__(self):
         self.users=listUsers
     
+    def get_all_users(self):
+        result = []
+        for user in self.users:
+            result.append(user.__dict__)
+        return result
+    
     def getUserByUsername(self,username):
-        for u in self.users:
-            if u.username == username:
-                return u
+        for user in self.users:
+            if user.username == username:
+                return user.__dict__
         return None
 
-app = Flask(__name__)
 daoUser = DAOUsers()
 
 # Endpoint para buscar usuarios por username
 
-@app.route('/Prototip1/getuser/', methods=['GET'])
+@app.route('/Prototip1/users/', methods=['GET'])
+def get_users():
+    return jsonify(daoUser.get_all_users())
+
+
 @app.route('/prototip1/getuser/', methods=['GET'])
-def getUser(username):
+def getUserByUsername(username):
     if username is None or username.strip() == "":
         return jsonify({
             "status": "error",
