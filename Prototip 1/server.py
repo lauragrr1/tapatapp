@@ -39,7 +39,7 @@ daoUser = DAOUsers()
 
 # Endpoint para buscar usuarios por username
 
-@app.route('/Prototip1/users/', methods=['GET'])
+@app.route('/Prototip1/listUsers', methods=['GET'])
 def get_users():
     return jsonify(daoUser.get_all_users())
 
