@@ -37,5 +37,5 @@ def showUserInfo(self, username: str):
 
 if __name__ == "__main__":
     view = ViewConsole()
-    username = view.getInputUsername()
-    view.showUserInfo(username)
+    username = ViewConsole.getInputUsername()
+    ViewConsole.showUserInfo(username)
