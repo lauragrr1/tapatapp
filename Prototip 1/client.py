@@ -32,9 +32,9 @@ def showUserInfo(self, username: str):
     user_dao = UserDAO()
     user = user_dao.get_user_by_username(username)
     if user:
-        print(user)
+        print(f"User Info: {user}")
     else:
-        print("Usuario no encontrado.")
+        print(f"User with username {username} not found")
 
 
 if __name__ == "__main__":
