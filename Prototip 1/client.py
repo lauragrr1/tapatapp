@@ -1,3 +1,4 @@
+import requests
 class User:
 
     def __init__(self, user_id: int, username: str, password: str, email: str):
