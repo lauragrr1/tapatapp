@@ -45,15 +45,10 @@ def get_users():
 
 
 @app.route('/prototip1/getuser/', methods=['GET'])
-def getUserByUsername(username):
-    if username is None or username.strip() == "":
-        return jsonify({
-            "status": "error",
-            "message": "Falta el parámetro 'usuario'"
-            }), 400 # Código 400: Bad Request
-    
-    user = daoUser.getUserByUsername(username)
-
+def getUserByUsername():
+    username=request.args.get('username', default="", type=str)
+    print("+"+username+"+")
+    user = daoUser.get_user_by_username(username)
     if user:
         return jsonify({
             "satatus": "succes",
