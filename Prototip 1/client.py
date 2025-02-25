@@ -2,8 +2,8 @@ import requests
 
 class User:
 
-    def __init__(self, user_id: int, username: str, password: str, email: str):
-        self.id = user_id
+    def __init__(self, id, username, password, email):
+        self.id = id
         self.username = username
         self.password = password
         self.email = email
