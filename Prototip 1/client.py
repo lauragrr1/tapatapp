@@ -27,7 +27,6 @@ class ViewConsole:
         return input("Enter username: ")
 
     def showUserInfo(username):
-        user_dao = UserDAO()
         user = UserDAO.get_user_by_username(username)
         if user:
             print(f"User Info: {user}")
