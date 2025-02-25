@@ -13,10 +13,10 @@ class User:
         print("Username:" + self.username +" Email:" + self.email)
 
 listUsers= [
-    User(1,"usuari1", "12345", "user@gmail.com"),
-    User(2,"usuari2", "6789", "user2@gmail.com"),
-    User(3,"usuari3","0101","user3@hotmail.com"),
-    User(4,"usuari4","2222", "user4@hotmail.com")
+    User(id=1, username="usuari1", password="12345", email="user@gmail.com"),
+    User(id=2, username="usuari2", password="6789", email="user2@gmail.com"),
+    User(id=3, username="usuari3", password="0101", email="user3@hotmail.com"),
+    User(id=4, username="usuari4", password="2222", email="user4@hotmail.com")
 ]
 
 class DAOUsers:
