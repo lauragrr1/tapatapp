@@ -33,7 +33,8 @@ daoUser = DAOUsers()
 
 # Endpoint para buscar usuarios por username
 
-@app.route('/Prototip1/getuser/<string:username>', methods=['GET'])
+@app.route('/Prototip1/getuser/', defaults={'username': None}, methods=['GET'])
+@app.route('/prototip1/getuser/<username>', methods=['GET'])
 def getUser(username):
     if username is None or username.strip() == "":
         return jsonify({
@@ -58,7 +59,7 @@ def getUser(username):
             "message": "Usuario no encontrado"
             }), 400 # Código 404: No encontrado
     
-@app.route('/tapatapp/getuser/<string:username>',methods=['GET'])
+@app.route('/tapatapp/getuser/',methods=['GET'])
 def get_Users ():
     n = str(request.args.get('username'))
     email = str(request.args.get('email'))
