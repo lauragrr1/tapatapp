@@ -29,13 +29,15 @@ class DAOUsers:
                 return u
         return None
 
+user_dao = UserDAO()
+
 app = Flask(__name__)
 daoUser = DAOUsers()
 
 # Endpoint para buscar usuarios por username
 
-@app.route('/Prototip1/getuser/', defaults={'username': None}, methods=['GET'])
-@app.route('/prototip1/getuser/<username>', methods=['GET'])
+@app.route('/Prototip1/getuser/', methods=['GET'])
+@app.route('/prototip1/getuser/', methods=['GET'])
 def getUser(username):
     if username is None or username.strip() == "":
         return jsonify({
