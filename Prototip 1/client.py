@@ -8,21 +8,20 @@ class User:
         self.password = password
         self.email = email
 
-def __str__(self):
-    return f"User(id={self.id}, username='{self.username}', email='{self.email}')"
+    def __str__(self):
+        return f"Id: {self.id}, Username: {self.username}, Password: {self.password}, Email: {self.email}"
 
 
 class UserDAO:
-    def __init__(self):
-# Base de datos simulada
-        self.users = {
-        "user1": User(1, "user1", "pass1", "user1@example.com"),
-        "user2": User(2, "user2", "pass2", "user2@example.com")
-        }
-
-def get_user_by_username(self, username: str):
-    return self.users.get(username, None)
-
+    def get_user_by_username(username):
+        response = requests.get(f'http://localhost:10050/prototip1/getuser?username={username}')
+        if response.status_code == 200:
+            user_data = response.json()
+            user = User(user_data['id'], user_data['username'], user_data['password'], user_data['email'])
+            return user
+        else:
+            return None
+        
 
 class ViewConsole:
     def getInputUsername(self):
