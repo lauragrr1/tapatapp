@@ -13,15 +13,15 @@ def login():
     username = data.get('username')
     password = data.get('password')
     
-    # Autenticación de usuario
+    # Autenticació d'usuari
     user = next((u for u in dao_users.users if u.username == username and u.password == password), None)
     if not user:
-        return jsonify({"error": "Credenciales incorrectas"}), 401
+        return jsonify({"error": "Incorrect credentials"}), 401
     
-    # Obtener información del niño asociado
+    # Obtenir informació del nen associat
     children = dao_childs.getChildbyUserID(user.id)
     if not children:
-        return jsonify({"message": "No hay niños asociados a este usuario"})
+        return jsonify({"message": "There are no children associated with this user"})
     
     return jsonify({"user": user.__dict__, "children": [child.__dict__ for child in children]})
 
