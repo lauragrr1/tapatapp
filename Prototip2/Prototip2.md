@@ -36,6 +36,4 @@ En aquest Prototip 2, s'implementarà un sistema de login que permetrà registra
 ## Diagrama de classes de Backend i Front-End
 
 
-[BackEnd](dadesPro2.mmd)
-
 ## Implementació
