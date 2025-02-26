@@ -4,7 +4,7 @@
 
 ## Descripció
 
-En aquest prototip 2, s'implementarà un sistema de login que permetrà registrar-se i iniciar sessió amb un nom d'usuari (correu electrònic) i contrasenya. Després, a partir de les dades de l'usuari (tutor), es podrà visualitzar la informació del nen amb els taps.
+En aquest Prototip 2, s'implementarà un sistema de login que permetrà registrar-se i iniciar sessió amb un nom d'usuari (correu electrònic) i contrasenya. Després, a partir de les dades de l'usuari (tutor), es podrà visualitzar la informació del nen amb els taps.
 
 ### Pantalla d’Inici i Autenticació
 - <b>Benvinguda:</b> Es mostra una pantalla amb opcions per iniciar sessió o registrar-se.
@@ -35,7 +35,6 @@ En aquest prototip 2, s'implementarà un sistema de login que permetrà registra
 
 ## Diagrama de classes de Backend i Front-End
 
-![FrontEnd](diagramaClassesPro2.png.png)
 
 [BackEnd](dadesPro2.mmd)
 
