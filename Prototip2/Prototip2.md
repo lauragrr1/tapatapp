@@ -3,6 +3,9 @@
 ![Pegat](FlowchartTutor.png) 
 
 ## Descripció
+
+En aquest prototip 2, s'implementarà un sistema de login que permetrà registrar-se i iniciar sessió amb un nom d'usuari (correu electrònic) i contrasenya. Després, a partir de les dades de l'usuari (tutor), es podrà visualitzar la informació del nen amb els taps.
+
 ### Pantalla d’Inici i Autenticació
 - <b>Benvinguda:</b> Es mostra una pantalla amb opcions per iniciar sessió o registrar-se.
 - <b>Registre d’Usuari</b>:
