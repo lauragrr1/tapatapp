@@ -3,10 +3,10 @@ from dadesPro2 import users, children
 
 app = Flask(__name__)
 
-dao_users = DAOUsers()
-dao_childs = DAOChilds()
+dao_users = users()
+dao_childs = children()
 
-# Ruta para iniciar sesión y obtener información del niño asociado
+# Ruta per iniciar sesión¡ i obtenir informació del nen associat
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json
@@ -19,7 +19,7 @@ def login():
         return jsonify({"error": "Credenciales incorrectas"}), 401
     
     # Obtener información del niño asociado
-    children = dao_childs.getChildbyUser_ID(user.id)
+    children = dao_childs.getChildbyUserID(user.id)
     if not children:
         return jsonify({"message": "No hay niños asociados a este usuario"})
     
