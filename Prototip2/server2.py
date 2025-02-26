@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from dadesPro2 import DAOUsers, DAOChilds
+from dadesPro2 import users, children
 
 app = Flask(__name__)
 
