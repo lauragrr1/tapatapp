@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from Server_prototipo2_daos import DAOUsers, DAOChilds
+from dadesPro2 import DAOUsers, DAOChilds
 
 app = Flask(__name__)
 
