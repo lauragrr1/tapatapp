@@ -51,4 +51,36 @@ En aquest Prototip 2, s'implementarà un sistema de login que permetrà registra
 
 ![FrontEnd](FrontEndP2.png)
 
+## Implementació
 
+### Vista Login i Vista Child Taps
+
+Vista Login:
+
+Descripció: Pantalla de Login on l'usuari es validarà.
+
+Informació d'Entrada: Username o email, Password.
+
+Informació que necessita la Vista: None.
+
+Implementació:
+
+Crear un formulari amb camps per a username/email i password.
+
+Validar les credencials amb el backend.
+
+Redirigir a la Vista Principal si el login és correcte.
+
+Vista Child Taps:
+
+Descripció: Vista del Child que té assignat l'Usuari amb els registres d'estat del pegat.
+
+Informació d'Entrada: None.
+
+Informació que necessita la Vista: User, Child i Taps.
+
+Implementació:
+
+Mostrar una llista de taps associats al child.
+
+Permetre a l'usuari veure els detalls de cada tap
