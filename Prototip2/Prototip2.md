@@ -55,7 +55,7 @@ En aquest Prototip 2, s'implementarà un sistema de login que permetrà registra
 
 ### Vista Login i Vista Child Taps
 
-Vista Login:
+- Vista Login:
 
 Descripció: Pantalla de Login on l'usuari es validarà.
 
@@ -71,7 +71,7 @@ Validar les credencials amb el backend.
 
 Redirigir a la Vista Principal si el login és correcte.
 
-Vista Child Taps:
+- Vista Child Taps:
 
 Descripció: Vista del Child que té assignat l'Usuari amb els registres d'estat del pegat.
 
