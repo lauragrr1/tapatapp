@@ -1,0 +1,49 @@
+classDiagram
+    class Webservice {
+        + getUserByCredentials(String username, String password): User / None
+        + getChildByUser(String username): Child / None
+        + getTapByChild(int child_id, int tap_id): Tap / None
+        + getAllTaps(int child_id): Tap[]
+    }
+
+    class DAOUser {
+        + User[] listUsers
+        + getUserByCredentials(String username, String password): dict / None
+    }
+
+    class User {
+        + String username
+        + String email
+        + String password
+    }
+
+    class DAOChild {
+        + Child[] listChilds
+        + getChildByUser(String username): dict / None
+        + getTapById(int child_id, int tap_id): dict / None
+        + getAllTaps(int child_id): list
+    }
+
+    class Child {
+        + int child_id
+        + String child_name
+        + String state
+        + Tap last_tap
+    }
+
+    class Tap {
+        + int id
+        + int sleep_total
+        + int time_slept
+        + int time_remaining
+        + Date start_date
+        + Date end_date
+    }
+
+    Webservice --> DAOUser: requests user data
+    DAOUser --> User: retrieves user data
+    DAOUser --> Webservice: returns user data if found
+    Webservice --> DAOChild: requests child data 
+    DAOChild --> Child: retrieves child data 
+    DAOChild --> Webservice: returns child data if found
+    DAOChild --> Tap: retrieves all taps data <br> OR specific ones 
