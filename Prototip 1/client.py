@@ -13,8 +13,8 @@ class User:
 
 
 class UserDAO:
-    def get_user_by_username(username):
-        response = requests.get(f'http://localhost:10050/prototip1/getuser?username={username}')
+    def getUserByUsername(username):
+        response = requests.get(f'http://localhost:10050/Prototip1/getuser?username={username}')
         if response.status_code == 200:
             user_data = response.json()
             user = User(user_data['id'], user_data['username'], user_data['password'], user_data['email'])
@@ -27,7 +27,7 @@ class ViewConsole:
         return input("Enter username: ")
 
     def showUserInfo(username):
-        user = UserDAO.get_user_by_username(username)
+        user = UserDAO.getUserByUsername(username)
         if user:
             print(f"User Info: {user}")
         else:
