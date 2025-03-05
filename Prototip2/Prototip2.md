@@ -2,7 +2,7 @@
 
 ![Wireframes](WireframeP2.png)
 
-## Descripció
+## Descripció dels views
 
 ### Pantalla d’Inici i Autenticació
 - <b>Benvinguda:</b> Es mostra una pantalla amb opcions per iniciar sessió o registrar-se.
