@@ -1,4 +1,4 @@
-import dadesPro2 as server
+import dadesPro2 as dades
 from dadesPro2 import User, Child, Tap, Role, Status, Treatment
 from flask import Flask, request, jsonify
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 class UserDAO:
     def __init__(self):
-        self.users = server.users
+        self.users = dades.users
 
     def get_all_users(self):
         return [user.__dict__ for user in self.users]
@@ -21,7 +21,7 @@ class UserDAO:
 
 class ChildDAO:
     def __init__(self):
-        self.children = server.children
+        self.children = dades.children
 
     def get_all_children(self):
         # Inicialitzar una llista buida per emmagatzemar els diccionaris dels fills
@@ -36,7 +36,7 @@ class ChildDAO:
         # Inicialitzar una llista buida per emmagatzemar els child_ids
         child_ids = []
         # Recórrer cada relació a la llista relation_user_child
-        for rel in server.relation_user_child:
+        for rel in dades.relation_user_child:
             # Comprovar si el user_id de la relació coincideix amb el user_id donat
             if rel["user_id"] == user_id:
                 # Afegir el child_id a la llista child_ids
