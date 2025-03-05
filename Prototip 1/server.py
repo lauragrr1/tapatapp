@@ -44,7 +44,7 @@ def get_users():
     return jsonify(daoUser.get_all_users())
 
 
-@app.route('/prototip1/getuser', methods=['GET'])
+@app.route('/Prototip1/getuser', methods=['GET'])
 def getUserByUsername():
     username=request.args.get('username', default="", type=str)
     print("+"+username+"+")
@@ -64,12 +64,6 @@ def getUserByUsername():
             "message": "Usuario no encontrado"
             }), 400 # Código 404: No encontrado
     
-@app.route('/tapatapp/getuser/',methods=['GET'])
-def get_Users ():
-    n = str(request.args.get('username'))
-    email = str(request.args.get('email'))
-    return "Hello " + n + ", email: " + email
-
 
 if __name__ == '__main__':
      app.run(debug=True,host="192.168.144.63",port="10050")
