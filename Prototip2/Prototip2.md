@@ -1,6 +1,6 @@
 ## WireFrames
 
-[Wireframes](../chartd/WireframeP2.mmd)
+![Wireframes](WireframeP2.png)
 
 ## Descripció
 
