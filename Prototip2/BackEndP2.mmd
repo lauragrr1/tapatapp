@@ -40,10 +40,10 @@ classDiagram
         + Date end_date
     }
 
-    Webservice --> DAOUser
-    DAOUser --> User
-    DAOUser --> Webservice
-    Webservice --> DAOChild
-    DAOChild --> Child 
-    DAOChild --> Webservice
-    DAOChild --> Tap
+    Webservice -- DAOUser
+    DAOUser -- User
+    DAOUser -- Webservice
+    Webservice -- DAOChild
+    DAOChild -- Child 
+    DAOChild -- Webservice
+    DAOChild -- Tap
