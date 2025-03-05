@@ -10,8 +10,8 @@ class User:
         return self.username + ":" + self.password + ":" + self.email
 
 users = [
-    User(id=1, username="Mare", password="DFG123", email="mare@gmail.com"),
-    User(id=2, username="Pare", password="POP098", email="pare@gmail.com")
+    User(id=1, username="mare", password="mare123", email="mare@gmail.com"),
+    User(id=2, username="pare", password="pare123", email="pare@gmail.com")
 ]
 
 # Clase Child
@@ -25,9 +25,7 @@ class Child:
 
 children = [
     Child(id=1, child_name="Rocío Child", sleep_average=8, treatment_id=1, time=6),
-    Child(id=2, child_name="Norman Child", sleep_average=10, treatment_id=2, time=6),
-    Child(id=3, child_name="Miguel Child", sleep_average=9, treatment_id=1, time=4),
-    Child(id=4, child_name="Nicole Child", sleep_average=10, treatment_id=1, time=4)
+    Child(id=2, child_name="Norman Child", sleep_average=10, treatment_id=2, time=6)
 ]
 
 # Clase Tap
@@ -42,9 +40,8 @@ class Tap:
 
 taps = [
     Tap(id=1, child_id=1, status_id=2, user_id=1, init="2025-01-06T19:42:00", end="2025-01-06T22:42:00"),
-    Tap(id=2, child_id=2, status_id=3, user_id=2, init="2025-01-11T21:31:00", end="2025-01-11T23:31:00"),
-    Tap(id=3, child_id=3, status_id=1, user_id=1, init="2025-01-10T22:30:00", end="2025-01-11T07:30:00"),
-    Tap(id=4, child_id=4, status_id=1, user_id=2, init="2025-01-15T20:55:00", end="2025-01-16T09:55:00")
+    Tap(id=2, child_id=2, status_id=3, user_id=2, init="2025-01-11T21:31:00", end="2025-01-11T23:31:00")
+    
 ]
 
 # Clase Status
@@ -52,6 +49,9 @@ class Status:
     def __init__(self, id, name):
         self.id = id
         self.name = name
+
+    def __str__(self):
+        return self.id + ":" + self.name
 
 statuses = [
     Status(id=1, name="sleep"),
@@ -66,6 +66,9 @@ class Role:
         self.id = id
         self.type_rol = type_rol
 
+    def __str__(self):
+        return self.id + ":" + self.type_rol
+
 roles = [
     Role(id=1, type_rol='Admin'),
     Role(id=2, type_rol='Tutor/Mare/Pare'),
@@ -79,6 +82,9 @@ class Treatment:
         self.id = id
         self.name = name
 
+    def __str__(self):
+        return self.id + ":" + self.name
+
 treatments = [
     Treatment(id=1, name='Hour'),
     Treatment(id=2, name='percentage')
@@ -86,7 +92,7 @@ treatments = [
 
 relation_user_child = [
     {"user_id": 1, "child_id": 1, "rol_id": 2},
-    {"user_id": 1, "child_id": 2, "rol_id": 2},
-    {"user_id": 2, "child_id": 1, "rol_id": 2},
+    {"user_id": 1, "child_id": 1, "rol_id": 2},
+    {"user_id": 2, "child_id": 2, "rol_id": 2},
     {"user_id": 2, "child_id": 2, "rol_id": 2}
 ]
