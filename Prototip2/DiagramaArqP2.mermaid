@@ -1,5 +1,22 @@
-flowchart TD
-    A[Frontend] --> B[Backend]
-    B --> C[Base de Dades]
-    A --> D[API]
-    D --> B
+graph TD
+    subgraph Frontend
+        A[View] --> B[DAOUser]
+        A --> C[DAOChild]
+        B --> D[User]
+        C --> E[Child]
+        C --> F[Tap]
+    end
+
+    subgraph Backend
+        B --> G[API]
+        C --> G
+        G --> H[Base de Dades]
+    end
+
+    subgraph Base de Dades
+        H --> I[Taula User]
+        H --> J[Taula Child]
+        H --> K[Taula Tap]
+    end
+
+    A --> G
