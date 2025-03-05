@@ -36,6 +36,8 @@ class DAOUsers:
         return None
 
 daoUser = DAOUsers()
+user = daoUser.getUserByUsername("usuari1")
+print(user)
 
 # Endpoint para buscar usuarios por username
 
@@ -50,14 +52,7 @@ def getUserByUsername():
     print("+"+username+"+")
     user = daoUser.getUserByUsername(username)
     if user:
-        return jsonify({
-            "satatus": "succes",
-            "message": "Usuario encontrado",
-            "data": {
-                "Username": user.username,
-                "ID:": user.id,
-                "Email": user.email
-            } }), 200 # Código 200 OK
+        return jsonify(user), 200 # Código 200 OK
     else:
         return jsonify({
             "status": "error",
