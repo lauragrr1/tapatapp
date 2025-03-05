@@ -1,69 +1,63 @@
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+# Clase User
 class User:
     def __init__(self, id, username, password, email):
-        self.id=id
-        self.username=username
-        self.password=password
-        self.email=email
+        self.id = id
+        self.username = username
+        self.password = password
+        self.email = email
+    
+    def __str__(self):
+        print(self.username+":"+self.password+":"+self.email)
 
-    def __str__(self): 
-        print("Username:" + self.username + " Email:" + self.email)
-
-listUsers= [
-    User(id=1, username="usuari1", password="12345", email="user@gmail.com"),
-    User(id=2, username="usuari2", password="6789", email="user2@gmail.com"),
-    User(id=3, username="usuari3", password="0101", email="user3@hotmail.com"),
-    User(id=4, username="usuari4", password="2222", email="user4@hotmail.com")
+# Dades d'exemple
+users = [
+    User(id=1, username="mare", password="mare", email="prova@gmail.com"),
+    User(id=2, username="pare", password="pare", email="prova2@gmail.com")
 ]
 
-class DAOUsers:
+# Classes DAO
+class UserDAO:
     def __init__(self):
-        self.users=listUsers
-    
+        self.users = users
+
     def get_all_users(self):
         result = []
         for user in self.users:
             result.append(user.__dict__)
         return result
-    
-    def getUserByUsername(self,username):
+
+    def get_user_by_username(self, username):
         for user in self.users:
             if user.username == username:
                 return user.__dict__
         return None
 
-daoUser = DAOUsers()
+# Inicialitzar DAOs
+user_dao = UserDAO()
 
-# Endpoint para buscar usuarios por username
+# Rutes del Servei Web
+# --------------------
+# Mètodes GET
+# /users: retorna tots els usuaris.
+# /users/username/<string:username>: retorna la informació d'un usuari específic pel seu username.
 
-@app.route('/Prototip1/listUsers', methods=['GET'])
+@app.route('/prototip1/users', methods=['GET'])
 def get_users():
-    return jsonify(daoUser.get_all_users())
+    return jsonify(user_dao.get_all_users())
 
-
-@app.route('/Prototip1/getuser', methods=['GET'])
-def getUserByUsername():
+@app.route('/prototip1/getuser', methods=['GET'])
+def get_user_by_username():
     username=request.args.get('username', default="", type=str)
     print("+"+username+"+")
-    user = daoUser.getUserByUsername(username)
+    user = user_dao.get_user_by_username(username)
     if user:
-        return jsonify({
-            "satatus": "succes",
-            "message": "Usuario encontrado",
-            "data": {
-                "Username": user.username,
-                "ID:": user.id,
-                "Email": user.email
-            } }), 200 # Código 200 OK
+        return jsonify(user)
     else:
-        return jsonify({
-            "status": "error",
-            "message": "Usuario no encontrado"
-            }), 400 # Código 404: No encontrado
-    
+        return jsonify({"error": f"User with username {username} not found"}), 404
 
 if __name__ == '__main__':
-     app.run(debug=True,host="0.0.0.0",port="10050")
+    app.run(host='0.0.0.0', port=10050, debug=True)
