@@ -50,3 +50,29 @@ class ChildDAO:
                 # Afegir el diccionari de l'objecte child a la llista
                 children_dicts.append(child.__dict__)
         return children_dicts
+    
+
+@app.route('/Prototip2', methods=['POST'])
+def Prototip2():
+    data = request.get_json()
+
+    if not data.get("username") or not data.get("password"):
+        return jsonify({"error": "Missing username or password"}), 400
+
+    username = data["username"]
+    password = data["password"]
+
+    user_dao = UserDAO()
+    user = user_dao.get_user_by_username_password(username, password)
+
+    if user:
+        child_dao = ChildDAO()
+        children = child_dao.get_children_by_user_id(user['id'])
+
+        return jsonify({"message": "Successful", "user_info": user, "children": children}), 200
+    else:
+        return jsonify({"error": "Incorrect username or password"}), 401
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host="0.0.0.0", port=10050)
