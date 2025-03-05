@@ -63,7 +63,7 @@ def Prototip2():
     password = data["password"]
 
     user_dao = UserDAO()
-    user = user_dao.get_user_by_username_password(username, password)
+    user = user_dao.getUserByCredentials(username, password)
 
     if user:
         child_dao = ChildDAO()

@@ -91,7 +91,7 @@ class ConsoleView:
                     print("Aquest usuari no té nens associats")
 
             elif option == "3":
-                print("Adeu!")
+                print("Sortint...")
                 break
 
             else:
