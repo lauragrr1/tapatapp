@@ -40,10 +40,10 @@ classDiagram
         + Date end_date
     }
 
-    Webservice --> DAOUser: requests user data
-    DAOUser --> User: retrieves user data
-    DAOUser --> Webservice: returns user data if found
-    Webservice --> DAOChild: requests child data 
-    DAOChild --> Child: retrieves child data 
-    DAOChild --> Webservice: returns child data if found
-    DAOChild --> Tap: retrieves all taps data <br> OR specific ones 
+    Webservice --> DAOUser
+    DAOUser --> User
+    DAOUser --> Webservice
+    Webservice --> DAOChild
+    DAOChild --> Child 
+    DAOChild --> Webservice
+    DAOChild --> Tap
