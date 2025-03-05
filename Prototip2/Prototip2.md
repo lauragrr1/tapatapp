@@ -45,10 +45,10 @@ En aquest Prototip 2, s'implementarà un sistema de login que permetrà registra
 
 ### Back End
 
-[BackEnd](BackEndP2.mmd)
+![BackEnd](BackEndP2.png)
 
 ### Front-End
 
-[FrontEnd](FrontEndP2.mmd)
+![FrontEnd](FrontEndP2.png)
 
 ## Implementació
