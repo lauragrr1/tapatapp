@@ -101,3 +101,66 @@ treatments = [
     Treatment(id=1, child_id=1, name='Hour'),
     Treatment(id=2, child_id=2, name='Percentage')
 ]
+
+# Funció per autenticar a l'usuari a través del servidor Flask
+def authenticate_user(username, password):
+    response = requests.post('http://localhost:10050/Prototip2', json={"username": username, "password": password})
+    return response
+
+# Funció per mostrar la informació de l'usuari
+def show_user_info(user):
+    print(f"Username: {user['username']}")
+    print(f"Email: {user['email']}")
+    print(f"Password: {user['password']}")
+
+# Funció per llistar els nens
+def list_children(children):
+    print("Child List:")
+    for child in children:
+        print(f"ID: {child['id']}, Nom: {child['child_name']}, Mitjana de son: {child['sleep_average']}, Tractament: {child['treatment_id']}, Temps: {child['time']}")
+        
+
+# Funció principal
+def main():
+    print(" ")
+    username = input("Introdueix el teu nom d'usuari: ")
+    password = input("Introdueix la teva contrasenya: ")
+    
+    response = authenticate_user(username, password)
+    
+    if response.status_code == 200:
+        data = response.json()
+        print(" ")
+        print(f"Welcome, {data['user_info']['username']}!")
+        print("Tria una de les opcions")
+        print(" ")
+
+        while True:
+            print("Selecciona una opció:")
+            print("1. User info")
+            print("2. List Child")
+            print("3. Salir")
+            
+            option = input("Selecciona una opció: ")
+            
+            if option == "1":
+                print(" ")
+                show_user_info(data['user_info'])
+                print(" ")
+            elif option == "2":
+                print(" ")
+                list_children(data['children'])
+                print(" ")
+            elif option == "3":
+                print(" ")
+                print("Sortint...")
+                break
+            else:
+                print(" ")
+                print("Opció no vàlida.")
+                print(" ")
+    else:
+        print("Usuari o contrasenya incorrectes.")
+
+if __name__ == "__main__":
+    main()
