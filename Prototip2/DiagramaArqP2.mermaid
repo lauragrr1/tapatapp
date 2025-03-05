@@ -1,21 +1,22 @@
 graph TD
     subgraph Frontend
-        A[View] --> B[DAOUser]
-        A --> C[DAOChild]
-        B --> D[User]
-        C --> E[Child]
-        C --> F[Tap]
+        A[ConsoleView] --> B[APIClient]
+        B -->|GET /getuser| C[Backend]
+        B -->|GET /getchildren| C
     end
 
     subgraph Backend
-        B --> G[API]
-        C --> G
-        G --> H[Base de Dades]
+        C[Flask Server] --> D[UserDAO]
+        C --> E[ChildDAO]
+        D --> F[Base de Dades]
+        E --> F
     end
 
     subgraph Base de Dades
-        H --> I[Taula User]
-        H --> J[Taula Child]
+        F[Base de Dades] --> G[Taula User]
+        F --> H[Taula Child]
+        F --> I[Taula Tap]
+        F --> J[Taula Role]
+        F --> K[Taula Status]
+        F --> L[Taula Treatment]
     end
-
-    A --> G
