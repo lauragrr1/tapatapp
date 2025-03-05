@@ -51,4 +51,4 @@ En aquest Prototip 2, s'implementarà un sistema de login que permetrà registra
 
 ![FrontEnd](FrontEndP2.png)
 
-## Implementació
+
