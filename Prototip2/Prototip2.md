@@ -4,8 +4,6 @@
 
 ## Descripció
 
-En aquest Prototip 2, s'implementarà un sistema de login que permetrà registrar-se i iniciar sessió amb un nom d'usuari (correu electrònic) i contrasenya. Després, a partir de les dades de l'usuari (tutor), es podrà visualitzar la informació del nen amb els taps.
-
 ### Pantalla d’Inici i Autenticació
 - <b>Benvinguda:</b> Es mostra una pantalla amb opcions per iniciar sessió o registrar-se.
 - <b>Registre d’Usuari</b>:
@@ -30,6 +28,12 @@ En aquest Prototip 2, s'implementarà un sistema de login que permetrà registra
     - Temps de retirada
     - Estat actual
 - <b>Configuració de l'Infant</b>: Opcions per modificar les preferències i informació associada.
+
+
+## Descripció d'Implementació del Prototip 2
+
+En aquest Prototip 2, s'implementarà un sistema de login que permetrà registrar-se i iniciar sessió amb un nom d'usuari (correu electrònic) i contrasenya. Després, a partir de les dades de l'usuari (tutor), es podrà visualitzar la informació del nen amb els taps.
+
 
 ## Diagrama d'arquitectura 
 
