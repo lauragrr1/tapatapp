@@ -7,7 +7,7 @@ classDiagram
     }
 
     class DAOUser {
-        + User[] listUsers
+        + User[] Users
         + getUserByCredentials(String username, String password): dict / None
     }
 
@@ -18,7 +18,7 @@ classDiagram
     }
 
     class DAOChild {
-        + Child[] listChilds
+        + Child[] Children
         + getChildByUser(String username): dict / None
         + getTapById(int child_id, int tap_id): dict / None
         + getAllTaps(int child_id): list
