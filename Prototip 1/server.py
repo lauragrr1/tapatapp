@@ -48,7 +48,7 @@ def get_users():
 def getUserByUsername():
     username=request.args.get('username', default="", type=str)
     print("+"+username+"+")
-    user = daoUser.get_user_by_username(username)
+    user = daoUser.getUserByUsername(username)
     if user:
         return jsonify({
             "satatus": "succes",
