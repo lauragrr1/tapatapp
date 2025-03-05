@@ -1,3 +1,8 @@
+---
+config:
+  theme: default
+  look: classic
+---
 classDiagram
     class View {
         + requestUsername(): String username
@@ -7,31 +12,24 @@ classDiagram
         + showChildInfo(Child child)
         + showTapInfo(Tap tap)
     }
-
     class DAOUser {
-        + getUserByCredentials(String username, String password): User / None
+        + getUserByCredentials(String username, String password)
     }
-
     class User {
         + String username
         + String email
         + String password
-        + __str__(): String
     }
-
     class DAOChild {
-        + getChildByUsername(User user): Child / None
+        + getChildByUsername(User user)
         + getAllTaps(Child child): Tap[]
-        + getTapById(int tap_id): Tap / None
+        + getTapById(int tap_id)
     }
-
     class Child {
         + String child_name
         + String state
         + Tap last_tap
-        + __str__(): String
     }
-
     class Tap {
         + int tap_id
         + int sleep_total
@@ -39,13 +37,11 @@ classDiagram
         + int time_remaining
         + Date start_date
         + Date end_date
-        + __str__(): String
     }
-
-    View --> DAOUser: requests user data
-    DAOUser --> User: retrieves user data
-    DAOUser --> View: returns user data if found
-    View --> DAOChild: requests child data 
-    DAOChild --> Child: retrieves child data 
-    DAOChild --> View: returns child data if found
-    DAOChild --> Tap: retrieves all taps data <br> OR specific ones 
+    View -- DAOUser: requests user data
+    DAOUser -- User: retrieves user data
+    DAOUser -- View: returns user data if found
+    View -- DAOChild: requests child data 
+    DAOChild -- Child: retrieves child data 
+    DAOChild -- View: returns child data if found
+    DAOChild -- Tap: retrieves all taps data <br> OR specific ones
