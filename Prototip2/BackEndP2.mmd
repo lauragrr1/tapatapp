@@ -1,7 +1,7 @@
 classDiagram
     class Webservice {
         + getUserByCredentials(String username, String password): User / None
-        + getChildByUser(String username): Child / None
+        + getChildByUsername(String username): Child / None
         + getTapByChild(int child_id, int tap_id): Tap / None
         + getAllTaps(int child_id): Tap[]
     }
@@ -19,7 +19,7 @@ classDiagram
 
     class DAOChild {
         + Child[] Children
-        + getChildByUser(String username): dict / None
+        + getChildByUsername(String username): dict / None
         + getTapById(int child_id, int tap_id): dict / None
         + getAllTaps(int child_id): list
     }
