@@ -48,5 +48,3 @@ En aquest Prototip 2, s'implementarà un sistema de login que permetrà registra
 ![BackEnd](DiagramadeClassesBackEnd.png)
 
 ## Implementació
-
-vvv
