@@ -1,6 +1,6 @@
 ## WireFrames
 
-![Pegat](FlowchartTutor.png) 
+[Wireframes](../chartd/WireframeP2.mmd)
 
 ## Descripció
 
