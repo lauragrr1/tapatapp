@@ -1,4 +1,4 @@
-# PROTOTIP 2 TAPATAPP
+# TAPATAPP
 
 ## WireFrames
 
