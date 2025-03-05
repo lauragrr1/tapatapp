@@ -13,7 +13,7 @@ class UserDAO:
     def get_all_users(self):
         return [user.__dict__ for user in self.users]
 
-    def get_user_by_username(self, username):
+    def getUserByCredentials(self, username):
         for user in self.users:
             if user.username == username:
                 return user.__dict__
@@ -32,7 +32,7 @@ class ChildDAO:
             children_dicts.append(child.__dict__)
         return children_dicts
 
-    def get_children_by_user_id(self, user_id):
+    def getChildByUser(self, user_id):
         # Inicialitzar una llista buida per emmagatzemar els child_ids
         child_ids = []
         # Recórrer cada relació a la llista relation_user_child
@@ -67,7 +67,7 @@ def Prototip2():
 
     if user:
         child_dao = ChildDAO()
-        children = child_dao.get_children_by_user_id(user['id'])
+        children = child_dao.getChildByUser(user['id'])
 
         return jsonify({"message": "Successful", "user_info": user, "children": children}), 200
     else:
