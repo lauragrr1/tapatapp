@@ -4,39 +4,49 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-dao_users = users()
-dao_childs = children()
+############  DAOs  ############
 
-@app.route('/login', methods=['POST'])
-def login():
-    data = request.json
-    username = data.get('username')
-    password = data.get('password')
-    
-    user = next((u for u in dao_users.users if u.username == username and u.password == password), None)
-    if not user:
-        return jsonify({"error": "Credenciales incorrectas"}), 401
-    
-    return jsonify({"user_id": user.id, "username": user.username, "email": user.email})
+class UserDAO:
+    def __init__(self):
+        self.users = server.users
 
-@app.route('/getchildren/<int:user_id>', methods=['GET'])
-def get_children(user_id):
-    children = dao_childs.getChildbyUser_ID(user_id)
-    if not children:
-        return jsonify({"message": "No hay niños asociados a este usuario"}), 404
+    def get_all_users(self):
+        return [user.__dict__ for user in self.users]
 
-    children_info = []
-    for child in children:
-        taps = dao_taps.getTapByChild_ID(child.id)
-        child_data = {
-            "id": child.id,
-            "name": child.child_name,
-            "sleep_average": child.sleep_average,
-            "taps": [{"id": tap.id, "init": tap.init, "end": tap.end} for tap in (taps or [])]
-        }
-        children_info.append(child_data)
+    def get_user_by_username(self, username):
+        for user in self.users:
+            if user.username == username:
+                return user.__dict__
+        return None
 
-    return jsonify(children_info)
+class ChildDAO:
+    def __init__(self):
+        self.children = server.children
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    def get_all_children(self):
+        # Inicialitzar una llista buida per emmagatzemar els diccionaris dels fills
+        children_dicts = []
+        # Recórrer cada objecte 'child' en la llista 'self.children'
+        for child in self.children:
+            # Convertir l'objecte 'child' en diccionari i afegir-lo a la llista
+            children_dicts.append(child.__dict__)
+        return children_dicts
+
+    def get_children_by_user_id(self, user_id):
+        # Inicialitzar una llista buida per emmagatzemar els child_ids
+        child_ids = []
+        # Recórrer cada relació a la llista relation_user_child
+        for rel in server.relation_user_child:
+            # Comprovar si el user_id de la relació coincideix amb el user_id donat
+            if rel["user_id"] == user_id:
+                # Afegir el child_id a la llista child_ids
+                child_ids.append(rel["child_id"])
+        # Inicialitzar una llista buida per emmagatzemar els diccionaris dels fills
+        children_dicts = []
+        # Recórrer cada objecte 'child' en la llista 'self.children'
+        for child in self.children:
+            # Comprovar si l'ID del child està dins de la llista child_ids
+            if child.id in child_ids:
+                # Afegir el diccionari de l'objecte child a la llista
+                children_dicts.append(child.__dict__)
+        return children_dicts
