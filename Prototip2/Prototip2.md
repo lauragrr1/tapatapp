@@ -39,10 +39,12 @@ En aquest Prototip 2, s'implementarà un sistema de login que permetrà registra
 
 ## Diagrama d'arquitectura 
 
+![Arq](DiagramaArq2.png)
+
 ## Diagrama de classes de Backend i Front-End
 
 ### Back End
 
-![BackEnd](backend.png)
+![BackEnd](DiagramadeClassesBackEnd.png)
 
 ## Implementació
