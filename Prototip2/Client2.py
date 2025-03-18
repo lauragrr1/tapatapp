@@ -104,6 +104,7 @@ if __name__ == "__main__":
     ConsoleView.run()
 
 app = Flask(__name__)  # Initialize the Flask app
+print("Servidor iniciat correctament")
 
 @app.route('/Prototip2/getchildren/<username>', methods=['GET'])
 def get_children(username):
