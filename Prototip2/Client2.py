@@ -29,7 +29,22 @@ class Child:
 
 
 class APIClient:
-    BASE_URL = "http://0.0.0.0:10050/Prototip2" 
+    BASE_URL = "http://127.0.0.1:10050/Prototip2"  # Assegura't que és l'adreça correcta
+
+    @staticmethod
+    def login(username, password):
+        try:
+            # Enviem una petició POST amb les credencials
+            response = requests.post(f"{APIClient.BASE_URL}/login", json={"username": username, "password": password})
+            if response.status_code == 200:
+                print("Login correcte!")
+                return response.json()  # Retornem les dades de l'usuari
+            else:
+                print(f"Error: {response.json().get('error', 'Credencials incorrectes')}")
+                return None
+        except Exception as e:
+            print(f"Connection Error: {e}")
+            return None
 
     @staticmethod
     def get_user(username):
@@ -68,9 +83,10 @@ class ConsoleView:
     @staticmethod
     def menu():
         print("\n--- MENU ---")
-        print("1. Consultar Usuari")
-        print("2. Consultar Nens de l'Usuari")
-        print("3. Sortir")
+        print("1. Login")
+        print("2. Consultar Usuari")
+        print("3. Consultar Nens de l'Usuari")
+        print("4. Sortir")
 
     @staticmethod
     def run():
@@ -78,22 +94,33 @@ class ConsoleView:
             ConsoleView.menu()
             option = input("Selecciona una opció: ")
 
-            if option == "1":
+            if option == "1":  # Login
+                username = input("Introdueix el nom d'usuari: ")
+                password = input("Introdueix la contrasenya: ")
+                user = APIClient.login(username, password)
+                if user:
+                    print(f"Benvingut/da, {user['user']['username']}!")
+                else:
+                    print("Login fallit. Credencials incorrectes.")
+
+            elif option == "2":  # Consultar Usuari
                 username = input("Introdueix el nom d'usuari: ")
                 user = APIClient.get_user(username)
                 if user:
                     print(user)
-            
-            elif option == "2":
+                else:
+                    print("Usuari no trobat.")
+
+            elif option == "3":  # Consultar Nens de l'Usuari
                 username = input("Introdueix el nom d'usuari: ")
                 children = APIClient.get_children(username)
                 if children:
                     for child in children:
                         print(child)
                 else:
-                    print("Aquest usuari no té nens associats")
+                    print("Aquest usuari no té nens associats.")
 
-            elif option == "3":
+            elif option == "4":  # Sortir
                 print("Sortint...")
                 break
 
