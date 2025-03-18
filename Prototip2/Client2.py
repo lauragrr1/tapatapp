@@ -27,12 +27,13 @@ class Child:
 
 
 class APIClient:
-    BASE_URL = "http://0.0.0.0:10050/Prototip2"  # puerto por defecto def en server2.py
+    BASE_URL = "http://127.0.0.1:10050/Prototip2"  # puerto por defecto def en server2.py
 
     @staticmethod
     def get_user(username):
         try:
             response = requests.get(f"{APIClient.BASE_URL}/getuser", params={"username": username})
+            print(f"Resposta de l'API: {response.status_code}, {response.text}")  # Depuració
             if response.status_code == 200:
                 data = response.json()
                 return User(data['id'], data['username'], data['email'])
