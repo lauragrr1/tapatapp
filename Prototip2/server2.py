@@ -101,5 +101,49 @@ class APIClient:
             print(f"Connection Error: {e}")
             return None
 
+class ConsoleView:
+    @staticmethod
+    def menu():
+        print("\n--- MENU ---")
+        print("1. Login")
+        print("2. Consultar Usuari")
+        print("3. Consultar Nens de l'Usuari")
+        print("4. Sortir")
+
+    @staticmethod
+    def run():
+        while True:
+            ConsoleView.menu()
+            option = input("Selecciona una opció: ")
+
+            if option == "1":
+                username = input("Introdueix el nom d'usuari: ")
+                password = input("Introdueix la contrasenya: ")
+                user = APIClient.login(username, password)
+                if user:
+                    print(f"Benvingut/da, {user['user']['username']}!")
+            
+            elif option == "2":
+                username = input("Introdueix el nom d'usuari: ")
+                user = APIClient.get_user(username)
+                if user:
+                    print(user)
+            
+            elif option == "3":
+                username = input("Introdueix el nom d'usuari: ")
+                children = APIClient.get_children(username)
+                if children:
+                    for child in children:
+                        print(child)
+                else:
+                    print("Aquest usuari no té nens associats")
+
+            elif option == "4":
+                print("Sortint...")
+                break
+
+            else:
+                print("Opció incorrecta. Torna a intentar-ho.")
+
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=10050)
