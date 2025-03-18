@@ -3,7 +3,7 @@
 # Obté la informació de l'usuari pel seu username.
 
 import requests
-from flask import jsonify  # Import jsonify from Flask
+from flask import Flask, jsonify  # Import Flask and jsonify from Flask
 from dadesPro2 import User, Child, Tap, Role, Status, Treatment
 
 class User:
@@ -102,6 +102,8 @@ class ConsoleView:
 
 if __name__ == "__main__":
     ConsoleView.run()
+
+app = Flask(__name__)  # Initialize the Flask app
 
 @app.route('/Prototip2/getchildren/<username>', methods=['GET'])
 def get_children(username):
