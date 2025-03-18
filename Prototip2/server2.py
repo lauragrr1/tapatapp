@@ -52,26 +52,22 @@ class ChildDAO:
         return children_dicts
     
 
-@app.route('/login', methods=['POST'])
-def Prototip2():
-    data = request.get_json()
+@app.route('/Prototip2/login', methods=['POST'])
+def login():
+    data = request.json  # Obtenim les dades del cos de la petició
+    username = data.get('username')
+    password = data.get('password')
 
-    if not data.get("username") or not data.get("password"):
-        return jsonify({"error": "Missing username or password"}), 400
-
-    username = data["username"]
-    password = data["password"]
+    if not username or not password:
+        return jsonify({"error": "Falten credencials"}), 400
 
     user_dao = UserDAO()
-    user = user_dao.getUserByCredentials(username, password)
+    user = user_dao.getUserByCredentials(username)
 
-    if user:
-        child_dao = ChildDAO()
-        children = child_dao.getChildByUser(user['id'])
-
-        return jsonify({"message": "Successful", "user_info": user, "children": children}), 200
+    if user and user['password'] == password:  # Comprovem si la contrasenya és correcta
+        return jsonify({"message": "Login correcte", "user": user}), 200
     else:
-        return jsonify({"error": "Incorrect username or password"}), 401
+        return jsonify({"error": "Credencials incorrectes"}), 401
 
 
 @app.route('/Prototip2/getuser', methods=['GET'])
@@ -88,6 +84,22 @@ def get_user():
     else:
         return jsonify({"error": "Usuari no trobat"}), 404
 
+class APIClient:
+    BASE_URL = "http://127.0.0.1:10050/Prototip2"  # Assegura't que és l'adreça correcta
+
+    @staticmethod
+    def login(username, password):
+        try:
+            response = requests.post(f"{APIClient.BASE_URL}/login", json={"username": username, "password": password})
+            if response.status_code == 200:
+                print("Login correcte!")
+                return response.json()  # Retornem les dades de l'usuari
+            else:
+                print(f"Error: {response.json().get('error', 'Credencials incorrectes')}")
+                return None
+        except Exception as e:
+            print(f"Connection Error: {e}")
+            return None
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=10050)
