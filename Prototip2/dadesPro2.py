@@ -107,7 +107,7 @@ treatments = [
 
 # Funció per autenticar a l'usuari a través del servidor Flask
 def authenticate_user(username, password):
-    response = requests.post('http://localhost:10050/Prototip2', json={"username": username, "password": password})
+    response = requests.post('http://127.0.0.1:10050/Prototip2', json={"username": username, "password": password})
     return response
 
 # Funció per mostrar la informació de l'usuari
