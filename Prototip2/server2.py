@@ -1,5 +1,5 @@
-import dadesServer as dades
-from dadesServer import User,Child,Tap,Status,Role,Treatment
+import dadesPro2 as dades
+from dadesPro2 import User,Child,Tap,Status,Role,Treatment
 from flask import Flask, jsonify, request
 
 # Exemple d'ús de la llista d'usuaris 
