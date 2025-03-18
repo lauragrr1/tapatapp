@@ -107,7 +107,7 @@ app = Flask(__name__)  # Initialize the Flask app
 
 @app.route('/Prototip2/getchildren/<username>', methods=['GET'])
 def get_children(username):
-    from dadesPro2 import UserDAO, ChildDAO  # Ensure UserDAO and ChildDAO are imported from the correct module
+    from dadesPro2 import UserDAO, ChildDAO  
     user_dao = UserDAO()
     user = user_dao.getUserByCredentials(username)
 
