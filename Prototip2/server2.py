@@ -74,5 +74,20 @@ def Prototip2():
         return jsonify({"error": "Incorrect username or password"}), 401
 
 
+@app.route('/Prototip2/getuser', methods=['GET'])
+def get_user():
+    username = request.args.get('username')
+    if not username:
+        return jsonify({"error": "Missing username"}), 400
+
+    user_dao = UserDAO()
+    user = user_dao.getUserByCredentials(username)
+
+    if user:
+        return jsonify(user), 200
+    else:
+        return jsonify({"error": "Usuari no trobat"}), 404
+
+
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=10050)
