@@ -3,6 +3,7 @@
 # Obté la informació de l'usuari pel seu username.
 
 import requests
+from flask import jsonify  # Import jsonify from Flask
 from dadesPro2 import User, Child, Tap, Role, Status, Treatment
 
 class User:
@@ -104,6 +105,7 @@ if __name__ == "__main__":
 
 @app.route('/Prototip2/getchildren/<username>', methods=['GET'])
 def get_children(username):
+    from dadesPro2 import UserDAO, ChildDAO  # Ensure UserDAO and ChildDAO are imported from the correct module
     user_dao = UserDAO()
     user = user_dao.getUserByCredentials(username)
 
