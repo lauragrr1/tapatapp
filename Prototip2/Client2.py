@@ -29,7 +29,7 @@ class Child:
 
 
 class APIClient:
-    BASE_URL = "http://127.0.0.1:10050/Prototip2" 
+    BASE_URL = "http://192.168.144.63:10050/Prototip2" 
 
     @staticmethod
     def get_user(username):
