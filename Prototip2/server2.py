@@ -1,8 +1,14 @@
-import dadesPro2 as dades
-from dadesPro2 import User, Child, Tap, Role, Status, Treatment
-from flask import Flask, request, jsonify
+import dadesServer as dades
+from dadesServer import User,Child,Tap,Status,Role,Treatment
+from flask import Flask, jsonify, request
 
-app = Flask(__name__)
+# Exemple d'ús de la llista d'usuaris 
+'''for x in dades.users:
+    print(x)
+
+# Exemple d'ús de la classe User
+a= User(id=1, username="Kurl", password="12345", email="prova2@gmail.com")
+print(a)'''
 
 ############  DAOs  ############
 
@@ -13,7 +19,7 @@ class UserDAO:
     def get_all_users(self):
         return [user.__dict__ for user in self.users]
 
-    def getUserByCredentials(self, username):
+    def get_user_by_username(self, username):
         for user in self.users:
             if user.username == username:
                 return user.__dict__
@@ -32,7 +38,7 @@ class ChildDAO:
             children_dicts.append(child.__dict__)
         return children_dicts
 
-    def getChildByUser(self, user_id):
+    def get_children_by_user_id(self, user_id):
         # Inicialitzar una llista buida per emmagatzemar els child_ids
         child_ids = []
         # Recórrer cada relació a la llista relation_user_child
@@ -50,29 +56,3 @@ class ChildDAO:
                 # Afegir el diccionari de l'objecte child a la llista
                 children_dicts.append(child.__dict__)
         return children_dicts
-    
-
-@app.route('/Prototip2', methods=['POST'])
-def Prototip2():
-    data = request.get_json()
-
-    if not data.get("username") or not data.get("password"):
-        return jsonify({"error": "Missing username or password"}), 400
-
-    username = data["username"]
-    password = data["password"]
-
-    user_dao = UserDAO()
-    user = user_dao.getUserByCredentials(username, password)
-
-    if user:
-        child_dao = ChildDAO()
-        children = child_dao.getChildByUser(user['id'])
-
-        return jsonify({"message": "Successful", "user_info": user, "children": children}), 200
-    else:
-        return jsonify({"error": "Incorrect username or password"}), 401
-
-
-if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=10050)
