@@ -1,6 +1,7 @@
 import dadesPro2 as dades
 from dadesPro2 import User, Child, Tap, Role, Status, Treatment
 from flask import Flask, request, jsonify
+import requests
 
 app = Flask(__name__)
 
