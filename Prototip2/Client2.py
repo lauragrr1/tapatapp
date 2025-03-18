@@ -3,6 +3,7 @@
 # Obté la informació de l'usuari pel seu username.
 
 import requests
+from dadesPro2 import User, Child, Tap, Role, Status, Treatment
 
 class User:
     def __init__(self, id, username, email):
