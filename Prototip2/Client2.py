@@ -100,3 +100,19 @@ class ConsoleView:
 
 if __name__ == "__main__":
     ConsoleView.run()
+
+@app.route('/Prototip2/getchildren/<username>', methods=['GET'])
+def get_children(username):
+    user_dao = UserDAO()
+    user = user_dao.getUserByCredentials(username)
+
+    if not user:
+        return jsonify({"error": "Usuari no trobat"}), 404
+
+    child_dao = ChildDAO()
+    children = child_dao.getChildByUser(user['id'])
+
+    if children:
+        return jsonify(children), 200
+    else:
+        return jsonify({"error": "No hi ha nens associats a aquest usuari"}), 404
