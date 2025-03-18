@@ -52,7 +52,7 @@ class ChildDAO:
         return children_dicts
     
 
-@app.route('/Prototip2', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def Prototip2():
     data = request.get_json()
 
