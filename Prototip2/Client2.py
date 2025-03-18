@@ -27,7 +27,7 @@ class Child:
 
 
 class APIClient:
-    BASE_URL = "http://127.0.0.1:10050/Prototip2"  # puerto por defecto def en server2.py
+    BASE_URL = "http://127.0.0.1:10050/dadesPro2.py"  # puerto por defecto def en server2.py
 
     @staticmethod
     def get_user(username):
