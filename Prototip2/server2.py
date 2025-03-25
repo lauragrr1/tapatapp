@@ -86,7 +86,7 @@ def get_user():
         return jsonify({"error": "Usuari no trobat"}), 404
 
 class APIClient:
-    BASE_URL = "http://127.0.0.1:10050/Prototip2"  # Assegura't que és l'adreça correcta
+    BASE_URL = "http://0.0.0.0:10050/Prototip2"  # Assegura't que és l'adreça correcta
 
     @staticmethod
     def login(username, password):
@@ -147,4 +147,4 @@ class ConsoleView:
                 print("Opció incorrecta. Torna a intentar-ho.")
 
 if __name__ == '__main__':
-    app.run(debug=True, host="127.0.0.1", port=10050)
+    app.run(debug=True, host="0.0.0.0", port=10050)

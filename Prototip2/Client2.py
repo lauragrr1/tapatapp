@@ -29,7 +29,7 @@ class Child:
 
 
 class APIClient:
-    BASE_URL = "http://127.0.0.1:10050/Prototip2"  # Assegura't que és l'adreça correcta
+    BASE_URL = "http://0.0.0.0:10050/Prototip2"  # Assegura't que és l'adreça correcta
 
     @staticmethod
     def login(username, password):
