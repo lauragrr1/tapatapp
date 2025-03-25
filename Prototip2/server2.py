@@ -1,96 +1,96 @@
-from flask import Flask, request, jsonify
-import dadesPro2 as dades
 
-class DAOUsers:
-    def __init__(self):
-        self.users=dades.users
-    def getUserByUsername(self,username):
-        for u in self.users:
-            if u.username == username:
-                return u.__dict__
-        return None
+import requests
 
-class DAORoles:
-    def __init__(self):
-        self.roles = dades.roles
-    def getRolById(self, rol_id):
-        for rol in self.roles:
-            if rol.id == rol_id:
-                return rol.type_rol
-        return None
-   
-class DAOChild:
-    def __init__(self):
-        self.children = dades.children
-        self.relations = dades.relation_user_child
-        self.treatments = dades.treatments
+class User:
+    def __init__(self, id, username, email):
+        self.id = id
+        self.username = username
+        self.email = email
 
-    def getChildrenByUserId(self, user_id):
-        result = []
-        allowed_roles = [1, 2, 3]  # comprovació de rols
-
-        for relation in self.relations:
-            #if relation["user_id"] == user_id and relation["rol_id"] in allowed_roles:
-            if relation.user_id == user_id and relation.rol_id in allowed_roles:
-                for child in self.children:
-                    if child.id == relation.child_id: #["child_id"]
-                        treatment = self.getTreatmentById(child.treatment_id)
-                        result.append({
-                            "id": child.id,
-                            "name": child.child_name,
-                            "sleep_average": child.sleep_average,
-                            "treatment": treatment.name if treatment else "Cap tractament",
-                            "time": child.time
-                        })
-        return result
-
-    def getTreatmentById(self, treatment_id):
-        for treatment in self.treatments:
-            if treatment.id == treatment_id:
-                return treatment
-        return None
+    def __str__(self):
+        return f"[User] ID: {self.id}, Username: {self.username}, Email: {self.email}"
 
 
-app = Flask(__name__)
-daoChild = DAOChild()
-daoUser = DAOUsers()
+class Child:
+    def __init__(self, id, name, sleep_average, treatment, time):
+        self.id = id
+        self.name = name
+        self.sleep_average = sleep_average
+        self.treatment = treatment
+        self.time = time
+
+    def __str__(self):
+        return f"[Child] ID: {self.id}, Name: {self.name}, Sleep Avg: {self.sleep_average}, Treatment: {self.treatment}, Time: {self.time}h"
 
 
-@app.route('/prototip2/getuser/', methods=['GET'])
-def get_user():
-    username = request.args.get('username')
-    if not username:
-        return jsonify({"error": "No s'ha proporcionat cap nom d'usuari"}), 400
+class APIClient:
+    BASE_URL = "http://localhost:5000/prototip2"  
 
-    user = daoUser.getUserByUsername(username)
-    if user: #if existeix
-        return jsonify({
-            "id": user["id"],
-            "username": user["username"],
-            "email": user["email"]
-        }), 200
-    else:
-        return jsonify({"error": "Usuari no trobat..."}), 404
+    @staticmethod
+    def get_user(username):
+        try:
+            response = requests.get(f"{APIClient.BASE_URL}/getuser", params={"username": username})
+            if response.status_code == 200:
+                data = response.json()
+                return User(data['id'], data['username'], data['email'])
+            else:
+                print(f"Error: {response.json().get('error', 'Usuari no trobat')}")
+                return None
+        except Exception as e:
+            print(f"Connection Error: {e}")
+            return None
 
+    @staticmethod
+    def get_children(username):
+        try:
+            response = requests.get(f"{APIClient.BASE_URL}/getchildren/{username}")
+           
+            if response.status_code == 200:
+                children_data = response.json()
+                return [Child(c["id"], c["name"], c["sleep_average"], c["treatment"], c["time"]) for c in children_data]
+               
+            else:
+                print(f"Error: {response.json().get('error', 'No children found')}")
+                return []
+        except Exception as e:
+            print(f"Connection Error: {e}")
+            return []
 
-@app.route('/prototip2/getchildren/<username>', methods=['GET'])
-def get_children(username):
-    user = daoUser.getUserByUsername(username)
-    if not user:
-        return jsonify({"error": "Usuari no trobat..."}), 404
+class ConsoleView:
+    @staticmethod
+    def menu():
+        print("\n------ MENU ------")
+        print("1. Consultar un usuari")
+        print("2. Consultar nens asignats a l'usuari")
+        print("3. Sortir")
 
-    children = daoChild.getChildrenByUserId(user["id"]) if isinstance(user, dict) else daoChild.getChildrenByUserId(user.id)
+    @staticmethod
+    def run():
+        while True:
+            ConsoleView.menu()
+            option = input("Selecciona una opció: ")
 
-    if children:
-        return jsonify(children), 200  
-    else:
-        return jsonify({"error": "Aquest usuari no té nens associats"}), 404
+            if option == "1":
+                username = input("Introdueix el nom d'usuari: ")
+                user = APIClient.get_user(username)
+                if user:
+                    print(user)
+            
+            elif option == "2":
+                username = input("Introdueix el nom d'usuari: ")
+                children = APIClient.get_children(username)
+                if children:
+                    for child in children:
+                        print(child)
+                else:
+                    print("Aquest usuari no té nens associats")
 
+            elif option == "3":
+                print("Sortint del programa...")
+                break
 
-#if __name__ == '__main__':
-#    app.run(debug=True) 
+            else:
+                print("Opció incorrecta. Torna a intentar-ho.")
 
-
-user = daoUser.getUserByUsername("usuari1")
-children = daoChild.getChildrenByUserId(user["id"]) if isinstance(user, dict) else daoChild.getChildrenByUserId(user.id)
-print("aaa", children)
+if __name__ == "__main__":
+    ConsoleView.run()
