@@ -55,8 +55,22 @@ class APIClient:
         except Exception as e:
             print(f"Connection Error: {e}")
             return []
-
 class ConsoleView:
+    @staticmethod
+    def login():
+        print("\n------ LOGIN ------")
+        username = input("Introdueix el nom d'usuari: ")
+        password = input("Introdueix la contrasenya: ")
+
+        # Simulació d'autenticació (pots integrar aquí un endpoint real d'autenticació si el tens)
+        user = next((u for u in users if u.username == username and u.password == password), None)
+        if user:
+            print("\nInici de sessió correcte. Benvingut/da!")
+            return user
+        else:
+            print("\nNom d'usuari o contrasenya incorrectes. Torna a intentar-ho.")
+            return None
+
     @staticmethod
     def menu():
         print("\n------ MENU ------")
@@ -66,6 +80,12 @@ class ConsoleView:
 
     @staticmethod
     def run():
+        # Iniciar sessió abans de mostrar el menú
+        current_user = None
+        while current_user is None:
+            current_user = ConsoleView.login()
+
+        # Després d'iniciar sessió, accedeix al menú principal
         while True:
             ConsoleView.menu()
             option = input("Selecciona una opció: ")
@@ -75,7 +95,7 @@ class ConsoleView:
                 user = APIClient.get_user(username)
                 if user:
                     print(user)
-            
+
             elif option == "2":
                 username = input("Introdueix el nom d'usuari: ")
                 children = APIClient.get_children(username)
@@ -91,6 +111,7 @@ class ConsoleView:
 
             else:
                 print("Opció incorrecta. Torna a intentar-ho.")
+
 
 if __name__ == "__main__":
     ConsoleView.run()
