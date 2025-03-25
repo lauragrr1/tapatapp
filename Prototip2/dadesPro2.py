@@ -75,7 +75,7 @@ statuses = [
     Status(id=3, name="yes_eyepatch"),
     Status(id=4, name="no_eyepatch")
 ]
-
+ 
 treatments = [
     Treatment(id=1, name='Hour'),
     Treatment(id=2, name='percentage')
