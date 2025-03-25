@@ -1,5 +1,5 @@
 import requests
-from dadespro2 import users  # Importamos la lista de usuarios
+from dadesPro2 import users  # Importamos la lista de usuarios
 
 class User:
     def __init__(self, id, username, email):
