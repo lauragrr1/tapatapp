@@ -41,8 +41,8 @@ class Treatment:
         self.name = name
 
 users = [
-    User(id=1, username="usuari1", password="mare", email="mare@gmail.com"),
-    User(id=2, username="usuari2", password="pare", email="pare@gmail.com")
+    User(id=1, username="mare", password="usuari1", email="mare@gmail.com"),
+    User(id=2, username="pare", password="usuari2", email="pare@gmail.com")
 ]
 
 children = [
