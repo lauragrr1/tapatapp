@@ -1,5 +1,5 @@
-
 import requests
+from dadespro2 import users  # Importamos la lista de usuarios
 
 class User:
     def __init__(self, id, username, email):
@@ -24,7 +24,7 @@ class Child:
 
 
 class APIClient:
-    BASE_URL = "http://localhost:5000/prototip2"  
+    BASE_URL = "http://localhost:5000/prototip2"
 
     @staticmethod
     def get_user(username):
@@ -44,17 +44,19 @@ class APIClient:
     def get_children(username):
         try:
             response = requests.get(f"{APIClient.BASE_URL}/getchildren/{username}")
-           
+
             if response.status_code == 200:
                 children_data = response.json()
                 return [Child(c["id"], c["name"], c["sleep_average"], c["treatment"], c["time"]) for c in children_data]
-               
+
             else:
                 print(f"Error: {response.json().get('error', 'No children found')}")
                 return []
         except Exception as e:
             print(f"Connection Error: {e}")
             return []
+
+
 class ConsoleView:
     @staticmethod
     def login():
@@ -62,7 +64,7 @@ class ConsoleView:
         username = input("Introdueix el nom d'usuari: ")
         password = input("Introdueix la contrasenya: ")
 
-        # Simulació d'autenticació (pots integrar aquí un endpoint real d'autenticació si el tens)
+        # Validación contra los usuarios de dadespro2.py
         user = next((u for u in users if u.username == username and u.password == password), None)
         if user:
             print("\nInici de sessió correcte. Benvingut/da!")
