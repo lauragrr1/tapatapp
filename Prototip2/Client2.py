@@ -1,151 +1,112 @@
-# Aquest client de consola fa el següent:
-# Recull el username de l'usuari.
-# Obté la informació de l'usuari pel seu username.
-
 import requests
-from flask import Flask, jsonify  # Import Flask and jsonify from Flask
-from dadesPro2 import User, Child, Tap, Role, Status, Treatment
 
-class User:
-    def __init__(self, id, username, email):
+# Clase Usuario
+class Usuario:
+    def __init__(self, id, nombre, email, contraseña):
         self.id = id
-        self.username = username
+        self.nombre = nombre
         self.email = email
+        self.contraseña = contraseña
+    
+    def login(self):
+        print(f"{self.nombre} ha iniciado sesión con éxito.")
+    
+    def registrar(self):
+        print(f"{self.nombre} ha sido registrado con éxito.")
+    
+    def recuperarContraseña(self):
+        print(f"Contraseña de {self.nombre} recuperada con éxito.")
+    
+    def cerrarSesion(self):
+        print(f"{self.nombre} ha cerrado sesión.")
 
-    def __str__(self):
-        return f"[User] ID: {self.id}, Username: {self.username}, Email: {self.email}"
+# Clase Niño
+class Nino:
+    def __init__(self, nombre, edad, horasActivas):
+        self.nombre = nombre
+        self.edad = edad
+        self.horasActivas = horasActivas
+    
+    def seleccionarNiño(self):
+        print(f"Niño seleccionado: {self.nombre}, Edad: {self.edad}")
+    
+    def verHorasActivas(self):
+        print(f"{self.nombre} tiene {self.horasActivas} horas activas.")
 
+# Clase Configuración
+class Configuración:
+    def __init__(self, configuracionesGenerales):
+        self.configuracionesGenerales = configuracionesGenerales
+    
+    def editarPerfil(self):
+        print("Perfil editado con éxito.")
+    
+    def modificarDatosPersonales(self):
+        print("Datos personales modificados con éxito.")
 
-class Child:
-    def __init__(self, id, name, sleep_average, treatment, time):
-        self.id = id
-        self.name = name
-        self.sleep_average = sleep_average
-        self.treatment = treatment
-        self.time = time
+# Clase RecuperaciónContraseña
+class RecuperacionContraseña:
+    def __init__(self, email, nuevaContraseña):
+        self.email = email
+        self.nuevaContraseña = nuevaContraseña
+    
+    def recuperarContraseña(self):
+        print(f"Contraseña para {self.email} recuperada con éxito.")
 
-    def __str__(self):
-        return f"[Child] ID: {self.id}, Name: {self.name}, Sleep Avg: {self.sleep_average}, Treatment: {self.treatment}, Time: {self.time}h"
+# Clase Contacto
+class Contacto:
+    def __init__(self, nombre, email, mensaje):
+        self.nombre = nombre
+        self.email = email
+        self.mensaje = mensaje
+    
+    def enviarMensaje(self):
+        print(f"Mensaje enviado de {self.nombre} a {self.email}: {self.mensaje}")
 
+# Clase PantallaPrincipal
+class PantallaPrincipal:
+    def __init__(self):
+        self.listaDeNinos = []
+    
+    def seleccionarNiño(self, nino):
+        self.listaDeNinos.append(nino)
+        print(f"Niño {nino.nombre} añadido a la lista.")
+    
+    def verHorasActivas(self, nino):
+        nino.verHorasActivas()
+    
+    def configurar(self, configuracion):
+        print("Configuración abierta.")
+        configuracion.editarPerfil()
+        configuracion.modificarDatosPersonales()
+    
+    def cerrarSesion(self, usuario):
+        usuario.cerrarSesion()
 
-class APIClient:
-    BASE_URL = "http://0.0.0.0:10050/Prototip2"  # Assegura't que és l'adreça correcta
+# Simulación de interacción con el usuario (cliente)
+class Cliente:
+    def __init__(self):
+        # Creación de objetos
+        self.usuario = Usuario(1, "Juan", "juan@example.com", "password123")
+        self.pantallaPrincipal = PantallaPrincipal()
+        self.configuracion = Configuración("Configuración General")
+        self.nino = Nino("Carlos", 8, 50)
+    
+    def login(self):
+        self.usuario.login()
+        self.pantallaPrincipal.seleccionarNiño(self.nino)
+    
+    def mostrarInformacionNiño(self):
+        self.pantallaPrincipal.verHorasActivas(self.nino)
+    
+    def editarConfiguracion(self):
+        self.pantallaPrincipal.configurar(self.configuracion)
+    
+    def cerrarSesion(self):
+        self.pantallaPrincipal.cerrarSesion(self.usuario)
 
-    @staticmethod
-    def login(username, password):
-        try:
-            # Enviem una petició POST amb les credencials
-            response = requests.post(f"{APIClient.BASE_URL}/login", json={"username": username, "password": password})
-            if response.status_code == 200:
-                print("Login correcte!")
-                return response.json()  # Retornem les dades de l'usuari
-            else:
-                print(f"Error: {response.json().get('error', 'Credencials incorrectes')}")
-                return None
-        except Exception as e:
-            print(f"Connection Error: {e}")
-            return None
-
-    @staticmethod
-    def get_user(username):
-        try:
-            response = requests.get(f"{APIClient.BASE_URL}/getuser", params={"username": username})
-            print(f"Resposta de l'API: {response.status_code}, {response.text}")  # Depuració
-            if response.status_code == 200:
-                data = response.json()
-                return User(data['id'], data['username'], data['email'])
-            else:
-                print(f"Error: {response.json().get('error', 'Usuari no trobat')}")
-                return None
-        except Exception as e:
-            print(f"Connection Error: {e}")
-            return None
-
-    @staticmethod
-    def get_children(username):
-        try:
-            response = requests.get(f"{APIClient.BASE_URL}/getchildren/{username}")
-            # if response.status_code == 200:
-            #     children = response.json()
-            #     return [Child(c["id"], c["name"], c["sleep_average"], c["treatment_id"], c["time"]) for c in children]
-            if response.status_code == 200:
-                children_data = response.json()
-                return [Child(c["id"], c["name"], c["sleep_average"], c["treatment"], c["time"]) for c in children_data]
-                #children = [Child(c["id"], c["name"], c["sleep_average"], c["treatment"], c["time"]) for c in children_data]
-            else:
-                print(f"Error: {response.json().get('error', 'No children found')}")
-                return []
-        except Exception as e:
-            print(f"Connection Error: {e}")
-            return []
-
-class ConsoleView:
-    @staticmethod
-    def menu():
-        print("\n--- MENU ---")
-        print("1. Login")
-        print("2. Consultar Usuari")
-        print("3. Consultar Nens de l'Usuari")
-        print("4. Sortir")
-
-    @staticmethod
-    def run():
-        while True:
-            ConsoleView.menu()
-            option = input("Selecciona una opció: ")
-
-            if option == "1":  # Login
-                username = input("Introdueix el nom d'usuari: ")
-                password = input("Introdueix la contrasenya: ")
-                user = APIClient.login(username, password)
-                if user:
-                    print(f"Benvingut/da, {user['user']['username']}!")
-                else:
-                    print("Login fallit. Credencials incorrectes.")
-
-            elif option == "2":  # Consultar Usuari
-                username = input("Introdueix el nom d'usuari: ")
-                user = APIClient.get_user(username)
-                if user:
-                    print(user)
-                else:
-                    print("Usuari no trobat.")
-
-            elif option == "3":  # Consultar Nens de l'Usuari
-                username = input("Introdueix el nom d'usuari: ")
-                children = APIClient.get_children(username)
-                if children:
-                    for child in children:
-                        print(child)
-                else:
-                    print("Aquest usuari no té nens associats.")
-
-            elif option == "4":  # Sortir
-                print("Sortint...")
-                break
-
-            else:
-                print("Opció incorrecta. Torna a intentar-ho.")
-
+# Interacción del cliente
 if __name__ == "__main__":
-    ConsoleView.run()
-
-app = Flask(__name__)  # Initialize the Flask app
-print("Servidor iniciat correctament")
-
-@app.route('/Prototip2/getchildren/<username>', methods=['GET'])
-def get_children(username):
-    from dadesPro2 import UserDAO, ChildDAO  
-    user_dao = UserDAO()
-    user = user_dao.getUserByCredentials(username)
-
-    if not user:
-        return jsonify({"error": "Usuari no trobat"}), 404
-
-    child_dao = ChildDAO()
-    children = child_dao.getChildByUser(user['id'])
-
-    if children:
-        return jsonify(children), 200
-    else:
-        return jsonify({"error": "No hi ha nens associats a aquest usuari"}), 404
+    cliente = Cliente()
+    cliente.login()  # Iniciar sesión
+    cliente.mostrarInformacionNiño()  # Ver horas activas de un niño
