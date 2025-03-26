@@ -1,6 +1,6 @@
 
 ## Prototip 1
-![Diagrama](diagramaPrototip1.png)
+![Diagrama](Imatges/diagramaPrototip1.png)
 
 ## HTTP Request & Response
 
@@ -54,6 +54,6 @@ Si falta el paràmetre, retorna:
 
 
 ## Diagrames 
-![DAO](diagramaDAO.PNG)
+![DAO](Imatges/diagramaDAO.PNG)
 ------
-![List](diagramaList.PNG)
+![List](Imatges/diagramaList.PNG)
