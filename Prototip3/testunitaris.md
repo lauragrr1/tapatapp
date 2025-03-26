@@ -17,35 +17,20 @@ Sobre unittest, funciona definint classes que hereten de unittest.TestCase. A ca
 
 
 #### 3-  [testsuma.py](testsuma.py) Exercici exemple test.
-Creació i execució d’un test senzill  amb Python per exemple testejar una funció de suma. Genera un fitxer python que testeji aquesta funció.
 
-def suma(a, b):
-    """Retorna la suma de dos nombres."""
-    return a + b
+#### 4- [testfuncions.py](testfuncions.py) Exercici exemple varies  funcions.
 
-4- (prototip3/testfuncions.py) Exercici exemple varies  funcions.
-Testeja més funcions, afegeix una resta i una divisió (que retorni un error quan la divisió és per 0)  
+#### 5- Fes una Llista de les assertions més importants en unittest i explica per a que  serveixen
 
-def resta(a, b):
-    """Retorna la resta de dos nombres."""
-    return a - b
+- assertEqual(a, b): Verifica que a és igual a b.
 
-def divideix(a, b):
-    """Retorna la divisió de dos nombres. Retorna 'Error' si b és 0."""
-    if b == 0:
-        return "Error: divisió per zero"
-    return a / b
+- assertNotEqual(a, b): Verifica que a no és igual a b.
 
-5-  (testunitaris.md) Fes una Llista de les assertions més importants en unittest i explica per a que  serveixen
-assertEqual(a, b): Verifica que a és igual a b.
+- assertTrue(x): Verifica que x és cert.
 
-assertNotEqual(a, b): Verifica que a no és igual a b.
+- assertFalse(x): Verifica que x és fals.
 
-assertTrue(x): Verifica que x és cert.
-
-assertFalse(x): Verifica que x és fals.
-
-assertRaises(Error, func, *args): Comprova que func llença un error del tipus especificat.
+- assertRaises(Error, func, *args): Comprova que func llença un error del tipus especificat.
 
 
-6-  (prototip3/testBackend.py)  Fes els tests Unitaris dels teus DAO i webservice del prototip 2 que tens a la carpeta prototip 3
+#### 6-  (prototip3/testBackend.py)  Fes els tests Unitaris dels teus DAO i webservice del prototip 2 que tens a la carpeta prototip 3
