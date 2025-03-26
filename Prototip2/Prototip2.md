@@ -2,7 +2,7 @@
 
 ## WireFrames
 
-![Wireframes](WireframeP2.png)
+![Wireframes](Imatges/WireframeP2.png)
 
 ## Descripció dels view
 
@@ -39,17 +39,17 @@ En aquest Prototip 2, s'implementarà un sistema de login que permetrà registra
 
 ## Diagrama d'arquitectura 
 
-![ArquitecturaP2](arq2.png)
+![ArquitecturaP2](Imatges/arq2.png)
 
 ## Diagrama de classes de Backend i Front-End
 
 ### Back End
 
-![BackEnd](BackEndP2.png)
+![BackEnd](Imatges/BackEndP2.png)
 
 ### Front-End
 
-![FrontEnd](FrontEndP2.png)
+![FrontEnd](Imatges/FrontEndP2.png)
 
 ## Implementació
 
