@@ -3,6 +3,16 @@ Els tests unitaris són proves automatitzades que comproven el funcionament corr
 
 
 2- (testunitaris.md) Fes una recerca de llibreries de test amb Python.  Com funciona específicament la llibreria unittest de Python?
+Python disposa de diverses llibreries per realitzar tests unitaris. Algunes de les més populars són:
+
+unittest: Inclosa a la llibreria estàndard de Python, proporciona eines per escriure i executar tests.
+
+pytest: Una llibreria més flexible i avançada que suporta funcionalitats modernes.
+
+nose2: Un successor de nose amb una integració senzilla.
+
+Sobre unittest, funciona definint classes que hereten de unittest.TestCase. A cada classe s'hi poden afegir mètodes que comencen amb "test_" per definir proves, i assertions per verificar el comportament esperat.
+
 
 3-  (prototip3/testsuma.py) Exercici exemple test.
 Creació i execució d’un test senzill  amb Python per exemple testejar una funció de suma. Genera un fitxer python que testeji aquesta funció.
