@@ -29,12 +29,14 @@ def get_user():
 # Ruta para obtener los niños asociados a un usuario (por simplicidad, asumimos todos los niños están relacionados con cualquier usuario)
 @app.route('/prototip2/getchildren/<username>', methods=['GET'])
 def get_children(username):
+    print(f"Rebuda petició per obtenir nens de l'usuari: {username}")  # Depuració
     user = next((u for u in users if u["username"] == username), None)
     if user:
+        print(f"Usuari trobat: {user}")  # Depuració
         return jsonify(children), 200
     else:
+        print("Usuari no trobat")  # Depuració
         return jsonify({"error": "No children found"}), 404
 
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10050, debug=True)
+    app.run(debug=True,host="0.0.0.0",port="10050")
