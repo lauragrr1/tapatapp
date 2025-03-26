@@ -35,5 +35,15 @@ def divideix(a, b):
     return a / b
 
 5-  (testunitaris.md) Fes una Llista de les assertions més importants en unittest i explica per a que  serveixen
+assertEqual(a, b): Verifica que a és igual a b.
+
+assertNotEqual(a, b): Verifica que a no és igual a b.
+
+assertTrue(x): Verifica que x és cert.
+
+assertFalse(x): Verifica que x és fals.
+
+assertRaises(Error, func, *args): Comprova que func llença un error del tipus especificat.
+
 
 6-  (prototip3/testBackend.py)  Fes els tests Unitaris dels teus DAO i webservice del prototip 2 que tens a la carpeta prototip 3
