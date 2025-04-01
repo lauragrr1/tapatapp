@@ -106,3 +106,6 @@ class DAOChild:
     def get_children_by_user_id(user_id):
         child_ids = [relation['child_id'] for relation in relation_user_child if relation['user_id'] == user_id]
         return [child for child in children if child.id in child_ids]
+
+if __name__ == '__main__':
+    app.run(debug=True,host="0.0.0.0",port="10050")
