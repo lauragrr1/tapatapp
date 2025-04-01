@@ -1,0 +1,28 @@
+{
+    "mare": {
+        "password": "12345",
+        "token": "f9d2e3ed194c74baeb87f0357c5e1f394d9d2903b7360b9b5ac54d13556467bc",
+        "children": [
+            {
+                "id": 1,
+                "child_name": "Carol Child",
+                "sleep_average": 8,
+                "treatment_id": 1,
+                "time": 6
+            }
+        ]
+    },
+    "pare": {
+        "password": "123",
+        "token": "a8c6c1f773d54f40b7c6769e680f153f32cb6eb221b6dff32f82b325a6792b0a",
+        "children": [
+            {
+                "id": 2,
+                "child_name": "Jaco Child",
+                "sleep_average": 10,
+                "treatment_id": 2,
+                "time": 6
+            }
+        ]
+    }
+}
