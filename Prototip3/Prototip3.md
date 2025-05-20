@@ -1,5 +1,4 @@
-# Prototip 3
-## Diagrames de Seqüència 
+# Prototip 3 - Diagrames de Seqüència 
 
 ## Joc Mòbil
 
