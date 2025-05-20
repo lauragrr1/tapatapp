@@ -5,7 +5,7 @@ from tkinter import messagebox
 class DAOUser:
     @staticmethod
     def getUserByCredentials(username, password):
-        response = requests.post("http://localhost:10050/prototip2/login", json={"username": username, "password": password})
+        response = requests.post("http://localhost:10050", json={"username": username, "password": password})
 
         if response.status_code == 200:
             userData = response.json()
@@ -17,7 +17,7 @@ class DAOChild:
     @staticmethod
     def getChildren(user_id, token):
         headers = {"Authorization": f"Bearer {token}"}
-        response = requests.get(f"http://localhost:10050/prototip2/children/{user_id}", headers=headers)
+        response = requests.get(f"http://localhost:10050{user_id}", headers=headers)
 
         if response.status_code == 200:
             return response.json()
