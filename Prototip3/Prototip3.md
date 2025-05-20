@@ -1,7 +1,7 @@
 # Prototip 3
 ## Diagrames de Seqüència 
 
-### Joc Mòbil
+## Joc Mòbil
 
 ![JocMobil](diagramaSecuenciaEX.png)
 
