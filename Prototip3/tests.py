@@ -1,5 +1,5 @@
 import unittest
-from app import app
+from server3 import app
 
 class TestLoginEndpoint(unittest.TestCase):
     def setUp(self):
