@@ -13,8 +13,8 @@ class User:
         return self.username + ":" + self.password + ":" + self.email
 
 users = [
-    User(id=1, username="mare", password="12345", email="mare@gmail.com"),
-    User(id=2, username="pare", password="11111", email="pare@gmail.com")
+    User(id=1, username="mare", password="mare123", email="mare@gmail.com"),
+    User(id=2, username="pare", password="pare123", email="pare@gmail.com")
 ]
 
 # Relación entre usuarios y niños
@@ -33,9 +33,9 @@ class Child:
         self.time = time
 
 children = [
-    Child(id=1, child_name="Laura Child", sleep_average=8, treatment_id=1, time=6),
-    Child(id=2, child_name="Christian Child", sleep_average=10, treatment_id=2, time=6),
-    Child(id=3, child_name="Jaco Child", sleep_average=6, treatment_id=2, time=5)
+    Child(id=1, child_name="Carla Montes", sleep_average=8, treatment_id=1, time=6),
+    Child(id=2, child_name="Jose Perez", sleep_average=10, treatment_id=2, time=6),
+    Child(id=3, child_name="Daniel Montes", sleep_average=6, treatment_id=1, time=5)
 ]
 
 # Diccionario para almacenar tokens activos

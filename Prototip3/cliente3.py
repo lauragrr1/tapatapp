@@ -5,7 +5,7 @@ from tkinter import messagebox
 class DAOUser:
     @staticmethod
     def getUserByCredentials(username, password):
-        response = requests.post("http://localhost:10050", json={"username": username, "password": password})
+        response = requests.post("http://localhost:10050/prototip2/login", json={"username": username, "password": password})
 
         if response.status_code == 200:
             userData = response.json()
@@ -17,7 +17,7 @@ class DAOChild:
     @staticmethod
     def getChildren(user_id, token):
         headers = {"Authorization": f"Bearer {token}"}
-        response = requests.get(f"http://localhost:10050{user_id}", headers=headers)
+        response = requests.get(f"http://localhost:10050/prototip2/children/{user_id}", headers=headers)
 
         if response.status_code == 200:
             return response.json()
@@ -28,61 +28,25 @@ class LoginApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Login App")
+        self.root.geometry("400x300")  # Tamaño inicial de la ventana
 
-        # Crear los frames para las pantallas
-        self.login_frame = tk.Frame(root)
-        self.info_frame = tk.Frame(root)
-
-        # Inicializar las pantallas
-        self.init_login_screen()
-        self.init_info_screen()
-
-        # Mostrar la pantalla de inicio de sesión
-        self.show_frame(self.login_frame)
-
-    def init_login_screen(self):
-        # Configurar la pantalla de inicio de sesión
-        self.login_frame.pack(fill="both", expand=True)
-
-        # Etiqueta y entrada para el username
-        username_label = tk.Label(self.login_frame, text="Username:")
-        username_label.pack(pady=10)
-        self.username_entry = tk.Entry(self.login_frame)
+        # Crear los widgets de la pantalla de inicio de sesión
+        self.username_label = tk.Label(root, text="Username:")
+        self.username_label.pack(pady=10)
+        self.username_entry = tk.Entry(root)
         self.username_entry.pack(pady=10)
 
-        # Etiqueta y entrada para el password
-        password_label = tk.Label(self.login_frame, text="Password:")
-        password_label.pack(pady=10)
-        self.password_entry = tk.Entry(self.login_frame, show="*")
+        self.password_label = tk.Label(root, text="Password:")
+        self.password_label.pack(pady=10)
+        self.password_entry = tk.Entry(root, show="*")
         self.password_entry.pack(pady=10)
 
-        # Botón para iniciar sesión
-        login_button = tk.Button(self.login_frame, text="Login", command=self.login)
-        login_button.pack(pady=20)
-
-    def init_info_screen(self):
-        # Configurar la pantalla de información
-        self.info_frame.pack(fill="both", expand=True)
+        self.login_button = tk.Button(root, text="Login", command=self.login)
+        self.login_button.pack(pady=20)
 
         # Área de texto para mostrar la información del usuario y los niños
-        self.info_text = tk.Text(self.info_frame, height=20, width=70, state="disabled")
-        self.info_text.pack(pady=20)
-
-        # Botón para regresar a la pantalla de inicio de sesión
-        back_button = tk.Button(self.info_frame, text="Back", command=lambda: self.show_frame(self.login_frame))
-        back_button.pack(pady=10)
-
-    def show_frame(self, frame):
-        # Cambiar el tamaño de la ventana según el frame
-        if frame == self.login_frame:
-            self.root.geometry("400x300")  # Tamaño para la pantalla de login
-        elif frame == self.info_frame:
-            self.root.geometry("600x450")  # Tamaño para la pantalla de información
-
-        # Ocultar todos los frames y mostrar el seleccionado
-        self.login_frame.pack_forget()
-        self.info_frame.pack_forget()
-        frame.pack(fill="both", expand=True)
+        self.info_text = tk.Text(root, height=15, width=50, state="disabled")
+        self.info_text.pack(pady=10)
 
     def login(self):
         username = self.username_entry.get()
@@ -96,7 +60,6 @@ class LoginApp:
         if user:
             self.display_user_info(user)
             self.get_children_info(user)
-            self.show_frame(self.info_frame)  # Cambiar a la pantalla de información
         else:
             messagebox.showerror("Error", "Credenciales incorrectas.")
 
