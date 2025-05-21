@@ -10,7 +10,7 @@ print(f"Generated token: {token}")
 
 class DAOUser:
     def __init__(self):
-        self.users = dadesServer.users
+        self.users = dadesP3.users
 
     def getUserById(self, user_id):
         for user in self.users:
@@ -26,11 +26,11 @@ class DAOUser:
 
 class DAOChild:
     def __init__(self):
-        self.children = dadesServer.children
-        self.taps = dadesServer.taps
+        self.children = dadesP3.children
+        self.taps = dadesP3.taps
 
     def getChildByUserId(self, user_id):
-        child_ids = [rel["child_id"] for rel in dadesServer.relation_user_child if rel["user_id"] == int(user_id)]
+        child_ids = [rel["child_id"] for rel in dadesP3.relation_user_child if rel["user_id"] == int(user_id)]
         children = [child for child in self.children if child.id in child_ids]
         return children
         

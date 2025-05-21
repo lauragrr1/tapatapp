@@ -39,10 +39,10 @@ class View:
             print(f"Error: user with user_id:{user} doesn't exist")
             return None
         data = {
-            "id": dadesServer.users[user].id,
-            "username": dadesServer.users[user].username,
-            "password": dadesServer.users[user].password,
-            "email": dadesServer.users[user].email
+            "id": dadesP3.users[user].id,
+            "username": dadesP3.users[user].username,
+            "password": dadesP3.users[user].password,
+            "email": dadesP3.users[user].email
         }
 
         TOKEN_VALID = "secret123"
