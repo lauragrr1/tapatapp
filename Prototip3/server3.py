@@ -1,12 +1,13 @@
 from flask import Flask, request, jsonify
-from dadesP3 import DAOUser
+from dadesP3 import DAOUser  # Asegúrate de que este módulo esté correctamente implementado
 
 app = Flask(__name__)
 
 @app.route('/login', methods=['POST'])
 def login():
+    # Verificar si se envió un token en el encabezado Authorization
     auth_header = request.headers.get('Authorization')
-    if (auth_header):
+    if auth_header:
         token = auth_header.split(" ")[1] if " " in auth_header else auth_header
         user = next((u for u in DAOUser.get_all_users() if u.token == token), None)
         if user:
@@ -28,10 +29,16 @@ def login():
             "msg": "No validat"
         }), 400
 
-    # Existing username/password login
+    # Si no hay token, intentar autenticación con username y password
     data = request.get_json()
-    identifier = data.get('username')  # username or email
+    if not data:
+        return jsonify({"msg": "No se enviaron datos"}), 400
+
+    identifier = data.get('username')  # Puede ser username o email
     password = data.get('password')
+    if not identifier or not password:
+        return jsonify({"msg": "Faltan credenciales"}), 400
+
     user = DAOUser.login(identifier, password)
     if user:
         id_role = -1
@@ -42,7 +49,7 @@ def login():
             "id": user.id,
             "username": user.username,
             "email": user.email,
-            "token": user.token,  # Use the user's token
+            "token": user.token,  # Usar el token del usuario
             "idrole": id_role,
             "msg": "Usuari Ok",
             "coderesponse": "1"
@@ -54,4 +61,5 @@ def login():
         }), 400
 
 if __name__ == '__main__':
+    # Configurar el servidor para escuchar en el puerto 10050
     app.run(host='0.0.0.0', port=10050, debug=True)
