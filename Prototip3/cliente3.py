@@ -1,7 +1,7 @@
 import requests
 import hashlib
-import dadesServer
-from dadesServer import User, Child, Tap
+import dadesP3
+from dadesP3 import User, Child, Tap
 
 class DAOUser:
     pass
