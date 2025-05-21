@@ -1,0 +1,41 @@
+@startuml
+left to right direction
+
+actor "Usuari" as generic_user
+actor "Cuidador Principal" as tutor_user
+actor "Cuidador Secundari" as cuidador_user
+actor "Metge" as user_metge
+tutor_user -|> generic_user
+cuidador_user -|> generic_user
+
+usecase "Login" as UC1
+usecase "Consulta Infant" as UC2
+usecase "Afegir/Eliminar Infant" as UC3
+usecase "Afegir Pegats Infant" as UC4
+usecase "Consulta Pegats Infant" as UC5
+usecase "Afegir/Eliminar/Modificar Cuidador Secundari" as UC9
+usecase "Afegir/Modificar Tractament" as UC10
+usecase "Veure seguiment tractament" as UC11
+(Consulta Usuari) as UC6
+(Calcular Temps Pegat) as UC7
+(Consulta Infant) as UC8
+
+generic_user -- UC1
+tutor_user -- UC2
+tutor_user -- UC3
+tutor_user -- UC4
+tutor_user -- UC5
+tutor_user -- UC9
+tutor_user -- UC10
+tutor_user -- UC11
+cuidador_user -- UC2
+cuidador_user -- UC4
+cuidador_user -- UC5
+user_metge -- UC10
+user_metge -- UC11
+
+UC2 <-- UC6 : include
+UC4 <.. UC7 : extends
+UC5 <-- UC8 : include
+@enduml
+       

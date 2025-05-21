@@ -1,90 +1,132 @@
-import hashlib
-import dadesP3
-from dadesP3 import User, Child, Tap
-from flask import Flask, jsonify, request
+from flask import Flask, request, jsonify, g
+import dadesP3 as dades
+import jwt
+import datetime
+from functools import wraps
 
-TOKEN_VALID = "secret123"
-
-token = hashlib.sha256(TOKEN_VALID.encode()).hexdigest()
-print(f"Generated token: {token}")
-
-class DAOUser:
+# DAOs de les classes que utilitzarem
+class DAOUsers:
     def __init__(self):
-        self.users = dadesP3.users
+        self.users = dades.users
 
-    def getUserById(self, user_id):
-        for user in self.users:
-            if user_id == user.id:
-                return user
+    def getUserByUsername(self, username):
+        for u in self.users:
+            if u.username == username:
+                return u.__dict__
         return None
 
-    def getUserByCredentials(self, username, password):
-        for user in self.users:
-            if user.username == username and user.password == password:
-                return user
+class DAORoles:
+    def __init__(self):
+        self.roles = dades.roles
+
+    def getRolById(self, rol_id):
+        for rol in self.roles:
+            if rol.id == rol_id:
+                return rol.type_rol
         return None
 
 class DAOChild:
     def __init__(self):
-        self.children = dadesP3.children
-        self.taps = dadesP3.taps
+        self.children = dades.children
+        self.relations = dades.relation_user_child
+        self.treatments = dades.treatments
 
-    def getChildByUserId(self, user_id):
-        child_ids = [rel["child_id"] for rel in dadesP3.relation_user_child if rel["user_id"] == int(user_id)]
-        children = [child for child in self.children if child.id in child_ids]
-        return children
-        
-    def getTapByChildId(self, child_id):
-        taps = [tap for tap in self.taps if tap.child_id == int(child_id)]
-        return taps
+    def getChildrenByUserId(self, user_id):
+        result = []
+        allowed_roles = [1, 2, 3]  # comprovació de rols
 
-DAOUser = DAOUser()
-DAOChild = DAOChild()
+        for relation in self.relations:
+            if relation["user_id"] == user_id and relation["rol_id"] in allowed_roles:
+                for child in self.children:
+                    if child.id == relation["child_id"]:  # Accés correcte a child_id
+                        treatment = self.getTreatmentById(child.treatment_id)
+                        result.append({
+                            "id": child.id,
+                            "name": child.child_name,
+                            "sleep_average": child.sleep_average,
+                            "treatment": treatment.name if treatment else "Cap tractament",
+                            "time": child.time
+                        })
+        return result
+
+    def getTreatmentById(self, treatment_id):
+        for treatment in self.treatments:
+            if treatment.id == treatment_id:
+                return treatment
+        return None
+
+# Configuració Flask
 app = Flask(__name__)
+daoChild = DAOChild()
+daoUser = DAOUsers()
+app.config["SECRET_KEY"] = "1234user"  # Canvia això per una clau més segura!
 
-#Metode actualitzat per a fer login amb POST y amb token
-@app.route('/tapatapp/getUserByCredentials', methods=['POST'])
-def getUserByCredentials():
+# Middleware per verificar el token
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = request.headers.get("Authorization")
+        if not token:
+            return jsonify({"error": "Token d'autenticació requerit"}), 403
+        try:
+            data = jwt.decode(token, app.config["SECRET_KEY"], algorithms=["HS256"])
+            g.user_id = data["user_id"]
+        except jwt.ExpiredSignatureError:
+            return jsonify({"error": "Token expirat"}), 401
+        except jwt.InvalidTokenError:
+            return jsonify({"error": "Token invàlid"}), 401
+        return f(*args, **kwargs)
+    return decorated
 
-    auth_header = request.headers.get('Authorization')
-    if not auth_header or auth_header.split(" ")[1] != token:
-        return jsonify({"error": "accés no autoritzat"}), 401
-    
-    data = request.get_json()
-    id = data.get('id')
-    username = data.get('username')
-    password = data.get('password')
-    email = data.get('email')
-    if username is None or password is None:
-            return jsonify({"error": "falten parametres"}), 400
-    
-    user = DAOUser.getUserByCredentials(username, password)
-    if user is None:
-        return jsonify({"error": "Credencials incorrectes"}), 401
-    
-    return jsonify({"id": id,
-                    "username": username,
-                    "password": password,
-                    "email": email})
+# Endpoint de login
+@app.route('/prototip3/login', methods=['POST'])
+def login():
+    data = request.json
+    username = data.get("username")
+    password = data.get("password")
 
-@app.route('/tapatapp/getChildByUserId', methods=['GET'])
-def getChildByUserId():
-    user_id = request.args.get('user_id')
-    children = DAOChild.getChildByUserId(user_id)
+    user = daoUser.getUserByUsername(username)
+    if user and user["password"] == password:
+        token = jwt.encode(
+            {"user_id": user["id"], "exp": datetime.datetime.utcnow() + datetime.timedelta(hours=1000)},
+            app.config["SECRET_KEY"],
+            algorithm="HS256"
+        )
+        return jsonify({"token": token, "username": user["username"], "email": user["email"]}), 200
+    else:
+        return jsonify({"error": "Usuari o contrasenya incorrectes"}), 401
+
+# Endpoint per obtenir dades d'un usuari
+@app.route('/prototip3/getuser/', methods=['GET'])
+@token_required
+def get_user():
+    username = request.args.get('username')
+    if not username:
+        return jsonify({"error": "No s'ha proporcionat cap nom d'usuari"}), 400
+
+    user = daoUser.getUserByUsername(username)
+    if user:
+        return jsonify({
+            "id": user["id"],
+            "username": user["username"],
+            "email": user["email"]
+        }), 200
+    else:
+        return jsonify({"error": "Usuari no trobat..."}), 404
+
+# Endpoint per obtenir els infants associats a un usuari
+@app.route('/prototip3/getchildren/<username>', methods=['GET'])
+def get_children(username):
+    user = daoUser.getUserByUsername(username)
+    if not user:
+        return jsonify({"error": "Usuari no trobat..."}), 404 
+
+    children = daoChild.getChildrenByUserId(user["id"])
     if children:
-        return jsonify([child.__dict__ for child in children])
+        return jsonify(children), 200
     else:
-        return jsonify({"error": "Children not found"}), 404
+        return jsonify({"error": "Aquest usuari no té nens associats"}), 404
 
-@app.route('/tapatapp/getTapByChildId', methods=['GET'])
-def getTapByChildId():
-    child_id = request.args.get('child_id')
-    taps = DAOChild.getTapByChildId(child_id)
-    if taps:
-        return jsonify([tap.__dict__ for tap in taps])
-    else:
-        return jsonify({"error": "Taps not found"}), 404
-
-
+# Iniciar el servidor Flask
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=10050)
+    app.run(debug=True) #192.168.144.160 , host="0.0.0.0", port=10050
